@@ -1,6 +1,8 @@
 # abreu-23-U-UNICID-ADS-CC-ENG-FRONTEND-2260030-N8-2-2026-INT-ECOVIDA
 UNICID – Universidade Cidade de São Paulo
 
+abreu-23-u-unicid-ads-cc-eng-frontend-2260030-n8-production.up.railway.app
+
 Curso Superior de Informática – Front-End | Atividade A2
 
 Escopo do Projeto
