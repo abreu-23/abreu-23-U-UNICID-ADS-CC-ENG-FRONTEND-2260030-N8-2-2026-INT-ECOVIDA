@@ -2,7 +2,7 @@
 
 > **Transforme sua Cidade, Comece por Você.**
 > Portal educativo sobre reciclagem, consumo consciente e economia de água e energia, com pontos de coleta em São Paulo e foco em acessibilidade digital.
-link:https://abreu-23-u-unicid-ads-cc-eng-frontend-2260030-n8-production.up.railway.app/
+link:https://ecovida2026.up.railway.app/
 
 | **Instituição** | UNICID – Universidade Cidade de São Paulo |
 | **Curso** | Curso Superior de Informática |
