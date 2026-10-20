@@ -10,7 +10,7 @@ link:https://abreu-23-u-unicid-ads-cc-eng-frontend-2260030-n8-production.up.rail
 | **Equipe** | Luccas Abreu, Pedro Henrique Pereira da Silva, Pedro Henrique da Silva Alves, Ruan Ferreira Silva |
 
 
-> 📄 O escopo completo, em PDF/Word, está em [`docs/`](docs/).
+
 
 ---
 
