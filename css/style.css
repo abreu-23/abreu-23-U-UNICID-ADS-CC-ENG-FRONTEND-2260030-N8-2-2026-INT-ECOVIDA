@@ -389,7 +389,7 @@ h2.section-title {
   display: block;
   margin-top: 0.6rem;
   font-size: 0.75rem;
-  color: #98a294;
+  color: var(--text-soft);
 }
 
 /* =========================================================
@@ -783,5 +783,121 @@ h2.section-title {
 
   .cta-final-actions {
     width: 100%;
+  }
+}
+
+/* =========================================================
+   Página Projetos
+   ========================================================= */
+.hero-projetos {
+  background-image: url("https://cdn.pixabay.com/photo/2016/09/19/10/20/urban-gardening-1679950_1280.jpg");
+}
+
+/* Passos numerados (ol reaproveitando .categories) */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-card .step-number {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 0.3rem;
+}
+
+.project-list {
+  background: var(--white);
+}
+
+/* Compensa o cabeçalho fixo ao seguir âncoras */
+.project-list,
+.project-card {
+  scroll-margin-top: 7rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.project-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Último cartão sozinho na linha fica centralizado */
+.project-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: calc(50% - 0.8rem);
+}
+
+.project-photo {
+  margin: 0;
+}
+
+.project-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.project-photo figcaption {
+  padding: 0 1.7rem;
+}
+
+.project-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 1.7rem 2rem;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.92rem;
+}
+
+.project-meta dt {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.project-meta dd {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.project-body .btn {
+  margin-top: auto;
+}
+
+@media (max-width: 860px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card:last-child:nth-child(odd) {
+    max-width: none;
+  }
+
+  .project-meta {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  .project-meta dd {
+    margin-bottom: 0.5rem;
   }
 }
