@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — EcoVida Urbana</title>
+  <meta name="description" content="Fale com o EcoVida Urbana: tire dúvidas, proponha parcerias, participe de ações nos bairros de São Paulo ou relate barreiras de acessibilidade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <circle cx="24" cy="24" r="22" fill="#2d6a4f"></circle>
+          <path d="M24 10c7 4 11 10 11 16a11 11 0 0 1-22 0c0-6 4-12 11-16z" fill="#b7ef53"></path>
+          <path d="M24 16v18" stroke="#1f4d39" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <span>EcoVida Urbana</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="impacto.html">Impacto</a></li>
+          <li><a href="acessibilidade.html">Acessibilidade</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="midia.html">Mídia</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html" aria-current="page">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary btn-nav-cta" href="contato.html">Junte-se ao Movimento</a>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- HERO INTERNO (mais baixo, para o formulário aparecer logo) -->
+    <section class="hero hero-page hero-contato">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <h1>Fale com a gente e junte-se ao movimento</h1>
+        <p class="lede">
+          Dúvidas, parcerias, participação em ações ou relato de barreiras:
+          tudo começa por aqui.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#formulario-contato">Preencher o formulário</a>
+        </div>
+      </div>
+      <svg class="section-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,90 L0,90 Z" fill="var(--bg)"></path>
+      </svg>
+    </section>
+
+    <!-- FORMULÁRIO E CANAIS -->
+    <section aria-labelledby="form-titulo">
+      <div class="container contact-grid">
+        <div class="form-card">
+          <h2 id="form-titulo">Envie sua mensagem</h2>
+          <p class="required-note">Campos marcados com "(obrigatório)" precisam ser preenchidos.</p>
+
+          <form id="formulario-contato" action="#" method="post">
+            <!-- Dados pessoais -->
+            <fieldset class="form-group">
+              <legend>Seus dados</legend>
+
+              <div class="form-field">
+                <label for="nome">Nome completo (obrigatório)</label>
+                <input id="nome" name="nome" type="text" autocomplete="name" required />
+              </div>
+
+              <div class="form-field">
+                <label for="email">E-mail (obrigatório)</label>
+                <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-dica" />
+                <span class="form-hint" id="email-dica">Exemplo: nome@email.com</span>
+              </div>
+
+              <div class="form-field">
+                <label for="telefone">Telefone (opcional)</label>
+                <input
+                  id="telefone"
+                  name="telefone"
+                  type="tel"
+                  autocomplete="tel"
+                  pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                  placeholder="(11) 90000-0000"
+                  aria-describedby="telefone-dica"
+                />
+                <span class="form-hint" id="telefone-dica">Formato: (11) 90000-0000, com DDD entre parênteses.</span>
+              </div>
+            </fieldset>
+
+            <!-- Participação -->
+            <fieldset class="form-group">
+              <legend>Sua participação</legend>
+
+              <div class="form-field">
+                <label for="assunto">Assunto (obrigatório)</label>
+                <select id="assunto" name="assunto" required>
+                  <option value="">Selecione um assunto</option>
+                  <option value="duvida">Dúvida</option>
+                  <option value="parceria">Parceria</option>
+                  <option value="participar">Participar de uma ação</option>
+                  <option value="barreira">Relatar barreira de acessibilidade</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="data-acao">Data da ação de interesse (opcional)</label>
+                <input id="data-acao" name="data-acao" type="date" min="2026-01-01" aria-describedby="data-dica" />
+                <span class="form-hint" id="data-dica">Escolha uma data a partir de 1º de janeiro de 2026.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="participantes">Número de participantes (opcional)</label>
+                <input id="participantes" name="participantes" type="number" min="1" max="50" aria-describedby="participantes-dica" />
+                <span class="form-hint" id="participantes-dica">De 1 a 50 pessoas.</span>
+              </div>
+            </fieldset>
+
+            <!-- Mensagem -->
+            <fieldset class="form-group">
+              <legend>Sua mensagem</legend>
+
+              <div class="form-field">
+                <label for="mensagem">Mensagem (obrigatório)</label>
+                <textarea id="mensagem" name="mensagem" rows="6" minlength="20" required aria-describedby="mensagem-dica"></textarea>
+                <span class="form-hint" id="mensagem-dica">Escreva pelo menos 20 caracteres.</span>
+              </div>
+
+              <div class="form-check">
+                <input id="privacidade" name="privacidade" type="checkbox" required />
+                <label for="privacidade">
+                  Li e aceito a Política de Privacidade e autorizo o uso dos meus dados
+                  apenas para responder a esta mensagem (obrigatório).
+                </label>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+            <p class="form-note">Formulário de demonstração, sem envio real nesta etapa do projeto.</p>
+          </form>
+        </div>
+
+        <aside class="contact-aside" aria-labelledby="canais-titulo">
+          <h2 id="canais-titulo">Outros canais</h2>
+          <address>
+            <p>
+              <strong>E-mail</strong>
+              <a href="mailto:contato@ecovidaurbana.exemplo">contato@ecovidaurbana.exemplo</a>
+            </p>
+            <p>
+              <strong>Telefone</strong>
+              <a href="tel:+551100000000">(11) 0000-0000</a>
+            </p>
+            <p>
+              <strong>Endereço</strong>
+              Rua das Árvores, 120 — Tatuapé, São Paulo – SP
+            </p>
+          </address>
+          <p>
+            <strong>Atendimento</strong>
+            Segunda a sexta, das 9h às 18h.
+          </p>
+          <p>Dados de contato fictícios nesta entrega.</p>
+          <p>
+            Quer relatar uma barreira de acessibilidade? Escolha esse assunto no
+            formulário e conte em qual página ela aconteceu.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- EQUIPE -->
+    <section class="team-section section-alt" aria-labelledby="equipe-titulo">
+      <div class="container">
+        <p class="section-label">UNICID · Front-End 2026</p>
+        <h2 class="section-title" id="equipe-titulo">Quem responde as mensagens</h2>
+        <p class="section-intro">
+          A equipe de estudantes que mantém o portal e lê cada mensagem.
+        </p>
+
+        <div class="team-grid">
+          <article class="category-card team-card">
+            <p class="team-initials" aria-hidden="true">LA</p>
+            <h3>Luccas Abreu</h3>
+            <p>Coordenação do portal e parcerias.</p>
+          </article>
+
+          <article class="category-card team-card">
+            <p class="team-initials" aria-hidden="true">PP</p>
+            <h3>Pedro Henrique Pereira da Silva</h3>
+            <p>Conteúdo, textos e notícias.</p>
+          </article>
+
+          <article class="category-card team-card">
+            <p class="team-initials" aria-hidden="true">PA</p>
+            <h3>Pedro Henrique da Silva Alves</h3>
+            <p>Dados de impacto e relatos de acessibilidade.</p>
+          </article>
+
+          <article class="category-card team-card">
+            <p class="team-initials" aria-hidden="true">RF</p>
+            <h3>Ruan Ferreira Silva</h3>
+            <p>Mídia e atendimento pelo contato.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERGUNTAS RÁPIDAS -->
+    <section aria-labelledby="perguntas-titulo">
+      <div class="container">
+        <p class="section-label">Antes de escrever</p>
+        <h2 class="section-title" id="perguntas-titulo">Perguntas rápidas</h2>
+        <div class="prose">
+          <details class="disclosure">
+            <summary>Preciso pagar para participar?</summary>
+            <div class="disclosure-body">
+              <p>Não. Todas as ações do EcoVida Urbana são gratuitas e abertas a qualquer pessoa.</p>
+            </div>
+          </details>
+          <details class="disclosure">
+            <summary>Posso levar crianças?</summary>
+            <div class="disclosure-body">
+              <p>
+                Pode e deve! Hortas, feiras e pedaladas curtas são ótimas para
+                crianças. Nos mutirões, menores de 12 anos participam acompanhados.
+              </p>
+            </div>
+          </details>
+          <details class="disclosure">
+            <summary>Os locais das ações têm acessibilidade?</summary>
+            <div class="disclosure-body">
+              <p>
+                Cada projeto informa as condições do local.
+                <a href="acessibilidade.html">Veja as medidas de acessibilidade do portal e das ações</a>.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final" aria-labelledby="cta-contato-titulo">
+      <div class="container">
+        <div>
+          <h2 id="cta-contato-titulo">Obrigado por querer fazer parte</h2>
+          <p>Enquanto a resposta não chega, conheça o que já está acontecendo na cidade.</p>
+        </div>
+        <div class="cta-final-actions">
+          <a class="cta-text-link" href="impacto.html">Ver o impacto coletivo</a>
+          <a class="cta-text-link" href="projetos.html">Conhecer os projetos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">
+            <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+              <circle cx="24" cy="24" r="22" fill="#ffffff" fill-opacity="0.12"></circle>
+              <path d="M24 10c7 4 11 10 11 16a11 11 0 0 1-22 0c0-6 4-12 11-16z" fill="#b7ef53"></path>
+              <path d="M24 16v18" stroke="#1f4d39" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+            EcoVida Urbana
+          </div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="index.html">Mapa do site</a></li>
+          <li><a href="sobre.html">Sobre nós</a></li>
+          <li><a href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 3.3.15 4.8 1.7 5 5 .06 1.3.07 1.6.07 4.8s0 3.6-.07 4.9c-.15 3.3-1.7 4.8-5 5-1.3.06-1.6.07-4.9.07s-3.6 0-4.9-.07c-3.3-.15-4.8-1.7-5-5C2.06 15.6 2 15.3 2 12s0-3.6.07-4.9c.15-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 3a6.8 6.8 0 1 0 0 13.6 6.8 6.8 0 0 0 0-13.6zm0 2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6zm6.9-2a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 21v-7.6h2.6l.4-3H13.5V8.4c0-.9.3-1.5 1.6-1.5h1.7V4.2C16.5 4.1 15.5 4 14.3 4c-2.4 0-4 1.5-4 4.1v2.3H7.7v3h2.6V21h3.2z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21H9z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 EcoVida Urbana. Todos os direitos reservados.</p>
+        <p>UNICID — Curso Superior de Informática · Atividade A2 Front-End</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

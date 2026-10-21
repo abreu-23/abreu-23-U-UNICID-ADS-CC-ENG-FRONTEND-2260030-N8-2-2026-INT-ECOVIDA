@@ -53,7 +53,10 @@ a {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
@@ -264,7 +267,7 @@ section {
 
 .section-label {
   font-size: 0.85rem;
-  color: var(--secondary);
+  color: var(--primary);
   font-weight: 700;
   margin: 0 0 0.5rem;
   text-align: center;
@@ -812,12 +815,6 @@ h2.section-title {
   background: var(--white);
 }
 
-/* Compensa o cabeçalho fixo ao seguir âncoras */
-.project-list,
-.project-card {
-  scroll-margin-top: 7rem;
-}
-
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -899,5 +896,540 @@ h2.section-title {
 
   .project-meta dd {
     margin-bottom: 0.5rem;
+  }
+}
+
+/* =========================================================
+   Componentes compartilhados (páginas internas)
+   ========================================================= */
+
+/* Texto oculto visualmente, mas lido por leitores de tela */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Compensa o cabeçalho fixo ao seguir âncoras */
+main [id] {
+  scroll-margin-top: 7rem;
+}
+
+/* Seção com fundo branco para alternar com o off-white */
+.section-alt {
+  background: var(--white);
+}
+
+/* Bloco de texto corrido com linhas de ~65 caracteres */
+.prose {
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+.prose p,
+.prose li {
+  color: var(--text);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3rem;
+}
+
+.prose li + li {
+  margin-top: 0.4rem;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+/* Navegação por âncoras em formato de "chips" */
+.chip-nav {
+  padding: 2.5rem 0 0;
+}
+
+.chip-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.chip-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 1.1rem;
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.chip-nav a:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Tabelas de dados com rolagem própria em telas pequenas */
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.data-table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.data-table caption {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.75rem 1.2rem;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid var(--border);
+}
+
+.data-table thead th {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+  border-top: 0;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: var(--bg);
+}
+
+.data-table tbody th {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.data-table tfoot th,
+.data-table tfoot td {
+  font-weight: 700;
+  color: var(--primary-dark);
+  border-top: 2px solid var(--primary);
+}
+
+.data-table .num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-note {
+  max-width: 65ch;
+  margin: -1.5rem 0 2.5rem;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+/* Conteúdo expansível com details/summary (sem JavaScript) */
+.disclosure {
+  margin: 0 0 1rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.disclosure summary {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.1rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  list-style: none;
+}
+
+.disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.disclosure summary::before {
+  content: "";
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.18s ease;
+}
+
+.disclosure[open] summary::before {
+  transform: rotate(45deg);
+}
+
+.disclosure-body {
+  padding: 0 1.1rem 1.1rem;
+}
+
+.disclosure-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--primary-dark);
+  margin: 1.2rem 0 0.4rem;
+}
+
+.disclosure-body ol,
+.disclosure-body ul {
+  margin: 0;
+  padding-left: 1.3rem;
+  color: var(--text-soft);
+}
+
+.disclosure-body > :last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   Página Impacto
+   ========================================================= */
+.hero-impacto {
+  background-image: url("https://cdn.pixabay.com/photo/2013/05/31/19/30/plastic-bottles-115069_1280.jpg");
+}
+
+/* =========================================================
+   Página Acessibilidade
+   ========================================================= */
+kbd {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.88rem;
+  color: var(--primary-dark);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+}
+
+.highlight-text ul {
+  margin: 0 0 1.4rem;
+  padding-left: 1.2rem;
+  color: var(--text-soft);
+}
+
+.highlight-text li + li {
+  margin-top: 0.4rem;
+}
+
+/* =========================================================
+   Página Galeria
+   ========================================================= */
+.hero-galeria {
+  background-image: url("https://cdn.pixabay.com/photo/2017/05/06/21/16/beachcleaning-2290949_1280.jpg");
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform 0.18s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.02);
+}
+
+.gallery-item figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+
+/* =========================================================
+   Página Mídia
+   ========================================================= */
+.media-block {
+  max-width: 54rem;
+  margin: 0 auto;
+}
+
+.media-figure {
+  margin: 0 0 1.2rem;
+}
+
+.media-frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--primary-dark);
+}
+
+.media-figure figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+
+.media-block audio {
+  display: block;
+  width: 100%;
+  margin: 0 0 1.2rem;
+}
+
+.category-card .episode-meta {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.media-block > h3 {
+  font-family: var(--font-heading);
+  color: var(--primary-dark);
+  margin: 2rem 0 1rem;
+}
+
+/* =========================================================
+   Página Notícias
+   ========================================================= */
+.hero-noticias {
+  background-image: url("https://cdn.pixabay.com/photo/2014/01/13/10/01/newspaper-243298_1280.jpg");
+}
+
+.news-meta {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+}
+
+.highlight-text .news-meta,
+.category-card .news-meta {
+  margin: 0 0 0.8rem;
+  font-size: 0.88rem;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.category-card .disclosure {
+  margin-bottom: 1rem;
+}
+
+/* =========================================================
+   Página Contato
+   ========================================================= */
+.hero-contato {
+  background-image: url("https://cdn.pixabay.com/photo/2022/03/16/23/04/support-7073543_1280.jpg");
+  padding: 3.5rem 0 5rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-card,
+.contact-aside {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.7rem;
+}
+
+.form-card h2,
+.contact-aside h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.4vw, 1.7rem);
+  color: var(--primary-dark);
+  margin: 0 0 0.6rem;
+}
+
+.required-note,
+.form-note {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.form-group {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  border: 0;
+}
+
+.form-group legend {
+  padding: 0;
+  margin-bottom: 0.8rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary-dark);
+}
+
+.form-field {
+  margin-bottom: 1.1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--white);
+  border: 2px solid #7c877e;
+  border-radius: var(--radius-sm);
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-hint {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+/* Erro só aparece depois que a pessoa interage com o campo */
+.form-field input:user-invalid,
+.form-field select:user-invalid,
+.form-field textarea:user-invalid {
+  border-color: #b3261e;
+  background: #fff6f5;
+}
+
+.form-field input:user-invalid + .form-hint::before,
+.form-field textarea:user-invalid + .form-hint::before {
+  content: "Verifique este campo: ";
+  font-weight: 700;
+  color: #b3261e;
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+
+.form-check input {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--primary);
+}
+
+.form-check label {
+  padding: 0.1rem 0;
+}
+
+.form-card button {
+  cursor: pointer;
+}
+
+.contact-aside address {
+  font-style: normal;
+}
+
+.contact-aside p {
+  margin: 0 0 1rem;
+  color: var(--text-soft);
+}
+
+.contact-aside strong {
+  display: block;
+  color: var(--primary-dark);
+}
+
+/* =========================================================
+   Página Orçamento de hospedagem
+   ========================================================= */
+.decision-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.decision-card {
+  text-align: center;
+}
+
+.decision-card .stat-value {
+  color: var(--primary-dark);
+}
+
+/* =========================================================
+   Responsivo das páginas internas
+   ========================================================= */
+@media (max-width: 960px) {
+  .contact-grid,
+  .decision-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .gallery-grid,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card,
+  .contact-aside {
+    padding: 1.6rem 1.2rem;
   }
 }
