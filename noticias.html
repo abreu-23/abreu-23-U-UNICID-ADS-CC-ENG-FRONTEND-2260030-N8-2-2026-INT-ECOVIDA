@@ -265,12 +265,20 @@
       <div class="container">
         <h2 class="section-title" id="newsletter-titulo">Receba dicas no seu e-mail</h2>
         <p class="section-intro">Uma dica prática por semana, sem spam.</p>
-        <form class="newsletter-form" action="#" method="post">
+        <form class="newsletter-form" action="https://formsubmit.co/ecovida0001@gmail.com" method="post">
+          <!-- Configuração do FormSubmit (envio para o e-mail da equipe, sem back-end) -->
+          <input type="hidden" name="_subject" value="Nova inscrição na newsletter (página Notícias)" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://ecovida2026.up.railway.app/obrigado.html" />
+          <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off" />
           <label for="noticias-email" class="visually-hidden">Seu e-mail</label>
           <input id="noticias-email" type="email" name="email" autocomplete="email" placeholder="Seu melhor e-mail" required />
           <button type="submit" class="btn btn-primary">Inscrever-se</button>
         </form>
-        <p class="newsletter-note">Formulário de demonstração — sem envio real nesta etapa do projeto.</p>
+        <p class="newsletter-note">
+          Seu e-mail é enviado à equipe pelo serviço FormSubmit. Para sair da lista,
+          é só pedir pelo <a href="contato.html">formulário de contato</a>.
+        </p>
       </div>
     </section>
 
