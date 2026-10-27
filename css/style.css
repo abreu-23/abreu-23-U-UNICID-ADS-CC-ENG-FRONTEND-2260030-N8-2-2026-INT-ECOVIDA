@@ -13,6 +13,7 @@
   --white: #ffffff;
   --text: #333333;
   --text-soft: #5b645d;
+  --ink-on-mint: #0b3322;  /* texto sobre o verde menta (5,6:1) */
   --border: #e1e7dc;
   --focus: #1d4ed8;
 
@@ -211,6 +212,11 @@ summary:focus-visible,
   padding: 5.5rem 0 7rem;
   overflow: hidden;
   text-align: center;
+}
+
+/* Fundo do hero da página inicial */
+.hero-home {
+  background-image: url("https://cdn.pixabay.com/photo/2018/04/04/13/38/nature-3289812_1280.jpg");
 }
 
 .hero-overlay {
@@ -460,8 +466,12 @@ h2.section-title {
    ========================================================= */
 .stats {
   background: var(--secondary);
-  color: var(--primary-dark);
+  color: var(--ink-on-mint);
   text-align: center;
+}
+
+.stats h2.section-title {
+  color: inherit;
 }
 
 .stats-grid {
@@ -481,15 +491,12 @@ h2.section-title {
 .stat-label {
   margin: 0.3rem 0 0;
   font-size: 0.98rem;
-  color: #114b32;
 }
 
 .stats-note {
   margin: 2.2rem auto 0;
   max-width: 60ch;
-  font-size: 0.8rem;
-  color: #114b32;
-  opacity: 0.85;
+  font-size: 0.85rem;
 }
 
 /* =========================================================
@@ -937,6 +944,13 @@ main [id] {
   color: var(--text);
 }
 
+.prose h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin: 2rem 0 0.5rem;
+}
+
 .prose ul,
 .prose ol {
   padding-left: 1.3rem;
@@ -1191,6 +1205,16 @@ kbd {
 
 .media-figure {
   margin: 0 0 1.2rem;
+}
+
+/* Aviso de mídia em produção (no lugar do player) */
+.media-pending {
+  margin: 0 0 1.2rem;
+  padding: 1rem 1.2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--secondary);
+  border-radius: var(--radius-sm);
 }
 
 .media-frame {
