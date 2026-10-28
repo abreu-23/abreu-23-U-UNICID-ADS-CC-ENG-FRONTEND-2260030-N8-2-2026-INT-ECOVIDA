@@ -70,8 +70,8 @@
         <p class="section-label">Como comparamos</p>
         <h2 class="section-title" id="criterios-titulo">O que avaliamos</h2>
         <p class="section-intro">
-          O portal é um site estático (só HTML e CSS), então não precisa de
-          servidor ligado o tempo todo. Isso pesou em cada critério.
+          O portal começou como site estático, mas o EcoBot precisa de um pequeno
+          servidor Node.js. Por isso, rodar o servidor virou um critério obrigatório.
         </p>
 
         <div class="values">
@@ -92,8 +92,8 @@
             <p>Conexão segura incluída, sem custo extra e com renovação automática.</p>
           </article>
           <article class="category-card">
-            <h3>Facilidade para site estático</h3>
-            <p>Publicação direta a partir do repositório Git, sem configuração de servidor.</p>
+            <h3>Servidor Node.js</h3>
+            <p>Rodar o servidor Express do EcoBot e publicar direto do repositório Git a cada merge.</p>
           </article>
           <article class="category-card">
             <h3>Suporte e documentação</h3>
@@ -109,8 +109,8 @@
         <p class="section-label">Hospedagem</p>
         <h2 class="section-title" id="hospedagens-titulo">Comparativo de hospedagens</h2>
         <p class="section-intro">
-          Três opções que publicam sites estáticos com HTTPS. Valores aproximados
-          de referência.
+          Três opções com HTTPS gratuito e publicação pelo GitHub. A coluna "Green
+          Web Check" traz o resultado real do teste, feito em 27/10/2026.
         </p>
 
         <div class="table-wrap" role="region" aria-labelledby="tabela-hospedagens" tabindex="0">
@@ -120,44 +120,45 @@
               <tr>
                 <th scope="col">Hospedagem</th>
                 <th scope="col">Plano</th>
-                <th scope="col" class="num">Custo anual estimado</th>
-                <th scope="col">Energia e clima</th>
-                <th scope="col">Servidores</th>
-                <th scope="col">HTTPS</th>
+                <th scope="col">Custo estimado</th>
+                <th scope="col">Roda o servidor do EcoBot?</th>
+                <th scope="col">Green Web Check</th>
                 <th scope="col">Observações</th>
               </tr>
             </thead>
             <tbody>
               <tr>
+                <th scope="row">Railway</th>
+                <td>Teste gratuito, depois Free ou Hobby</td>
+                <td>US$ 5 em créditos por 30 dias; Hobby ~US$ 5/mês</td>
+                <td>Sim</td>
+                <td>Não verificada como verde</td>
+                <td>Plataforma adotada na disciplina; deploy automático a cada merge e logs no painel</td>
+              </tr>
+              <tr>
+                <th scope="row">Render</th>
+                <td>Gratuito</td>
+                <td>R$ 0 (a confirmar)</td>
+                <td>Sim</td>
+                <td>Verde (Google Cloud)</td>
+                <td>No plano gratuito, o serviço "dorme" sem visitas e demora para acordar (a confirmar)</td>
+              </tr>
+              <tr>
                 <th scope="row">GitHub Pages</th>
                 <td>Gratuito (repositório público)</td>
-                <td class="num">R$ 0</td>
-                <td>Infraestrutura da Microsoft, com meta pública de energia renovável; a confirmar no Green Web Check</td>
-                <td>Rede de distribuição global (CDN)</td>
-                <td>Incluído</td>
-                <td>Feito para sites estáticos; já usamos o GitHub para versionar o projeto</td>
-              </tr>
-              <tr>
-                <th scope="row">Netlify</th>
-                <td>Gratuito</td>
-                <td class="num">R$ 0</td>
-                <td>Usa provedores de nuvem terceiros; compromisso climático a confirmar</td>
-                <td>Rede de distribuição global (CDN)</td>
-                <td>Incluído</td>
-                <td>Publicação automática pelo Git; limites de banda e de minutos de build no plano gratuito</td>
-              </tr>
-              <tr>
-                <th scope="row">Railway</th>
-                <td>Hobby</td>
-                <td class="num">~US$ 60 (a confirmar)</td>
-                <td>Informação sobre energia renovável não localizada; a confirmar</td>
-                <td>Região escolhida pelo cliente (EUA, Europa ou Ásia)</td>
-                <td>Incluído</td>
-                <td>Hospeda o protótipo de testes; pensado para aplicações com servidor, mais do que este site precisa</td>
+                <td>R$ 0</td>
+                <td>Não: só arquivos estáticos</td>
+                <td>Verde (Fastly)</td>
+                <td>Seria a escolha para um site só com HTML e CSS, mas o EcoBot não funcionaria</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="table-note">
+          Teste feito com a API pública do Green Web Check para os domínios
+          ecovida2026.up.railway.app, onrender.com e github.io. Preços do Railway
+          conforme o material da disciplina (consulta em outubro de 2026).
+        </p>
 
       </div>
     </section>
@@ -224,25 +225,27 @@
 
         <div class="decision-grid">
           <div class="category-card decision-card">
-            <p class="stat-value">~R$ 40</p>
-            <p>por ano, somando hospedagem e domínio (estimativa)</p>
+            <p class="stat-value">R$ 0</p>
+            <p>durante o teste gratuito; depois, cerca de US$ 5 por mês no plano Hobby (estimativa)</p>
           </div>
           <div class="prose">
             <p>
-              Escolhemos <strong>GitHub Pages</strong> com o domínio
-              <strong>ecovidaurbana.com.br</strong>, registrado no Registro.br.
+              Publicamos no <strong>Railway</strong>, com o endereço gratuito
+              <strong>ecovida2026.up.railway.app</strong>.
             </p>
             <ul>
-              <li>O portal é estático: não precisa de um servidor ligado o tempo todo, o que gasta menos energia.</li>
-              <li>A hospedagem é gratuita, tem HTTPS incluído e publica direto do repositório que a equipe já usa.</li>
-              <li>A rede de distribuição entrega as páginas de servidores próximos, o que deixa o site rápido em São Paulo.</li>
-              <li>O domínio .com.br passa confiança ao público brasileiro e custa pouco.</li>
+              <li>É a plataforma adotada na disciplina e roda o servidor Node.js do EcoBot.</li>
+              <li>Publica sozinho a cada merge na branch principal, com HTTPS e logs no painel.</li>
+              <li>O subdomínio gratuito atende à entrega; o domínio ecovidaurbana.com.br (~R$ 40 por ano) fica para uma versão definitiva.</li>
             </ul>
             <p>
-              A Railway continua apenas como ambiente de testes. Antes da
-              publicação oficial, vamos rodar o
-              <a href="https://www.thegreenwebfoundation.org/green-web-check/">teste do Green Web Check</a>
-              e registrar o resultado nas evidências do projeto.
+              <strong>O ponto fraco é a energia:</strong> o Railway não aparece como
+              hospedagem verde no
+              <a href="https://www.thegreenwebfoundation.org/green-web-check/">Green Web Check</a>.
+              Para compensar, mantemos o site leve: CSS único, JavaScript pequeno,
+              nada toca sozinho e imagens cada vez mais leves. Se a prioridade passar a ser
+              a energia, a alternativa é o Render, que roda o mesmo servidor em
+              infraestrutura verificada como verde.
             </p>
           </div>
         </div>
