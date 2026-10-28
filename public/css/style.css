@@ -216,7 +216,7 @@ summary:focus-visible,
 
 /* Fundo do hero da página inicial */
 .hero-home {
-  background-image: url("https://cdn.pixabay.com/photo/2018/04/04/13/38/nature-3289812_1280.jpg");
+  background-image: url("../img/nature-3289812-1280.webp");
 }
 
 .hero-overlay {
@@ -706,7 +706,7 @@ h2.section-title {
 }
 
 .hero-sobre {
-  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_1280.jpg");
+  background-image: url("../img/architecture-1868667-1280.webp");
 }
 
 .about-story .section-label {
@@ -800,7 +800,7 @@ h2.section-title {
    Página Projetos
    ========================================================= */
 .hero-projetos {
-  background-image: url("https://cdn.pixabay.com/photo/2016/09/19/10/20/urban-gardening-1679950_1280.jpg");
+  background-image: url("../img/urban-gardening-1679950-1280.webp");
 }
 
 /* Passos numerados (ol reaproveitando .categories) */
@@ -1131,7 +1131,7 @@ main [id] {
    Página Impacto
    ========================================================= */
 .hero-impacto {
-  background-image: url("https://cdn.pixabay.com/photo/2013/05/31/19/30/plastic-bottles-115069_1280.jpg");
+  background-image: url("../img/plastic-bottles-115069-1280.webp");
 }
 
 /* =========================================================
@@ -1163,7 +1163,7 @@ kbd {
    Página Galeria
    ========================================================= */
 .hero-galeria {
-  background-image: url("https://cdn.pixabay.com/photo/2017/05/06/21/16/beachcleaning-2290949_1280.jpg");
+  background-image: url("../img/beachcleaning-2290949-1280.webp");
 }
 
 .gallery-grid {
@@ -1255,7 +1255,7 @@ kbd {
    Página Notícias
    ========================================================= */
 .hero-noticias {
-  background-image: url("https://cdn.pixabay.com/photo/2014/01/13/10/01/newspaper-243298_1280.jpg");
+  background-image: url("../img/newspaper-243298-1280.webp");
 }
 
 .news-meta {
@@ -1283,7 +1283,7 @@ kbd {
    Página Contato
    ========================================================= */
 .hero-contato {
-  background-image: url("https://cdn.pixabay.com/photo/2022/03/16/23/04/support-7073543_1280.jpg");
+  background-image: url("../img/support-7073543-1280.webp");
   padding: 3.5rem 0 5rem;
 }
 

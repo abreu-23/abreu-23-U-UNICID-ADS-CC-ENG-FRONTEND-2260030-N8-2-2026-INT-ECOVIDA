@@ -23,7 +23,8 @@ tecnologia, estilo ou conteúdo.
 - Dados de impacto são **ilustrativos** e precisam estar sinalizados. Números oficiais:
   +5.000 pessoas engajadas, +200 dicas, 128.430 kg reciclados, 5 projetos, 12 bairros.
 - Imagens apenas do Pixabay, com crédito "Foto: usuário / Pixabay". Nunca invente URL
-  ou autor: confira na página da foto.
+  ou autor: confira na página da foto. Depois, rode `npm run imagens` para baixar a foto
+  para `public/img/` em WebP (até 200 KB); o site não usa links do CDN do Pixabay.
 - Toda tarefa em uma branch própria, com PR revisado pela equipe antes do merge.
 
 ## 4. Exemplo

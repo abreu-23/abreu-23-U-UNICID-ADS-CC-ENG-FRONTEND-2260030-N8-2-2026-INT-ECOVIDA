@@ -95,6 +95,8 @@ hábitos.
 ├── public/                # o site, servido pelo Express
 │   ├── *.html             # as páginas
 │   ├── css/style.css      # folha de estilo única
+│   ├── js/                # ecobot.js e acessibilidade.js
+│   ├── img/               # fotos em WebP (npm run imagens)
 │   ├── assets/legendas/   # legendas .vtt
 │   └── favicon.svg
 ├── server.js              # servidor Node.js + Express
@@ -104,15 +106,15 @@ hábitos.
 └── README.md
 ```
 
-Próximos passos: `public/js/` e `public/img/` quando houver scripts e imagens locais;
-`lib/ia.js` com o EcoBot; `.env` (fora do Git) com a chave da IA.
+Próximo passo opcional: EcoBot com IA (trocar `responder()` em `lib/faq.js`) e
+`.env` (fora do Git) com a chave da IA.
 
 ## 10. Desejáveis (nice to have)
 
 - Modo alto contraste e leitura por voz.
 - Mapa interativo com busca por endereço.
 - Contador de impacto atualizado em tempo real.
-- Imagens baixadas para `img/` em WebP (≤ 200 KB).
+- ~~Imagens baixadas para `img/` em WebP (≤ 200 KB)~~ — feito (issue #8).
 - Menu recolhível no celular.
 
 ## 11. Critérios de sucesso (métricas)
