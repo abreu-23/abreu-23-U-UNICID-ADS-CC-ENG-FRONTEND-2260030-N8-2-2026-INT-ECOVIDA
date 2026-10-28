@@ -1,0 +1,19 @@
+---
+description: Quando e como sugerir melhorias nas regras do projeto
+alwaysApply: true
+---
+
+# Melhoria contínua das regras
+
+Ciclo: codar → observar → ajustar → aplicar.
+
+Sugira criar ou ajustar uma regra quando:
+- um padrão novo aparecer em 3 ou mais arquivos;
+- o mesmo erro se repetir;
+- a equipe der o mesmo feedback em revisões diferentes;
+- uma regra ficar desatualizada (marque como depreciada em vez de apagar sem aviso).
+
+Como sugerir:
+1. Mostre a mudança proposta (diff) **antes** de salvar.
+2. Explique o motivo com um exemplo real do código.
+3. Só salve depois da aprovação da equipe, em uma branch `docs/regras-...` com PR.

@@ -1,0 +1,40 @@
+---
+description: Padrão de branches, commits e pull requests do EcoVida Urbana (aplicar manualmente com @git-commits)
+alwaysApply: false
+---
+
+# Git: branches, commits e PRs
+
+## 1. Objetivo
+Histórico claro, que mostre a evolução da equipe (20% da rubrica).
+
+## 2. Contexto
+- A `main` publica direto no Railway: nada entra nela sem PR revisado.
+- Fluxo: issue → branch → commits → pull request → revisão → merge → deploy.
+
+## 3. Regras
+- Uma branch por tarefa, criada a partir da `main` atualizada:
+  `feat/` (recurso novo), `fix/` (correção), `docs/` (documentação),
+  `style/` (só visual), `refactor/` (reorganização sem mudar comportamento).
+  Ex.: `feat/ecobot`, `fix/contraste-stats`, `docs/plano-contexto`.
+- Mensagem de commit em português, no imperativo, com prefixo:
+  `tipo: descrição curta` (até ~60 caracteres) + corpo com o "porquê", se preciso.
+- Commits pequenos: uma mudança lógica por commit.
+- PR com: o que mudou, como testar, e checklist (W3C, teclado, contraste, 360/768/1280 px).
+- Quem abriu o PR não aprova o próprio merge; outro integrante revisa.
+
+## 4. Exemplo
+```
+feat: adiciona botão de leitura por voz
+
+Usa a API speechSynthesis do navegador. O botão só aparece
+quando o navegador suporta a API.
+```
+
+## 5. Erros a evitar
+- `git push` direto na `main` ou `--force`.
+- Mensagens vagas como "update", "ajustes", "teste".
+- Commitar `.env`, chaves ou `node_modules/`.
+
+## 6. Perguntas
+Antes de qualquer push, merge ou redeploy, pergunte à equipe.
