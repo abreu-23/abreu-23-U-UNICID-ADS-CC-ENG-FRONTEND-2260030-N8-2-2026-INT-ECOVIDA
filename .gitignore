@@ -1,0 +1,10 @@
+# Segredos (chaves de API) — nunca vão para o Git
+.env
+.env.*
+
+# Dependências do Node.js
+node_modules/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
