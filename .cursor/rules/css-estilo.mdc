@@ -46,6 +46,8 @@ Manter um CSS único, consistente e sem duplicação.
 - Texto pequeno sobre `--secondary` (verde menta) com cor diferente de `--ink-on-mint`:
   reprova no contraste.
 - Duplicar uma regra que já existe em outro bloco.
+- Usar `<section>` dentro de um componente (painel, widget) sem `padding: 0`: toda
+  `section` herda `padding: 4rem 0` do CSS global (aconteceu no painel do EcoBot).
 
 ## 6. Perguntas
 Se uma mudança visual afetar todas as páginas, avise e pergunte antes.
