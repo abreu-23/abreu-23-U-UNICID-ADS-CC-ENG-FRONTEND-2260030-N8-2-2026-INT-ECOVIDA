@@ -85,17 +85,22 @@ hábitos.
 ```
 /
 ├── .cursor/rules/         # regras para a IA (.mdc)
+├── .github/               # modelos de issue e de pull request
 ├── docs/                  # plano de contexto, escopo, diário de bordo, evidências
-├── *.html                 # páginas do site (migração prevista para public/)
-├── css/style.css          # folha de estilo única
-├── assets/legendas/       # legendas .vtt
-├── favicon.svg
-├── .gitignore
+├── public/                # o site, servido pelo Express
+│   ├── *.html             # as páginas
+│   ├── css/style.css      # folha de estilo única
+│   ├── assets/legendas/   # legendas .vtt
+│   └── favicon.svg
+├── server.js              # servidor Node.js + Express
+├── package.json           # dependências e script "npm start"
+├── .gitignore             # ignora .env e node_modules/
+├── .gitattributes         # quebras de linha padronizadas (LF)
 └── README.md
 ```
 
-Estrutura-alvo, com o EcoBot: páginas, `css/`, `js/` e `img/` em `public/`;
-`server.js`, `lib/ia.js` e `package.json` na raiz; `.env` fora do Git.
+Próximos passos: `public/js/` e `public/img/` quando houver scripts e imagens locais;
+`lib/ia.js` com o EcoBot; `.env` (fora do Git) com a chave da IA.
 
 ## 10. Desejáveis (nice to have)
 
