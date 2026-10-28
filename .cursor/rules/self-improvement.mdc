@@ -5,15 +5,39 @@ alwaysApply: true
 
 # Melhoria contínua das regras
 
-Ciclo: codar → observar → ajustar → aplicar.
+## 1. Objetivo
+Manter as regras atualizadas com o que o projeto realmente faz, no ciclo
+codar → observar → ajustar → aplicar.
 
+## 2. Contexto
+- As regras ficam em `.cursor/rules/` e mudam por PR, como qualquer código.
+- A equipe aprova toda mudança de regra antes de ela valer.
+
+## 3. Regras
 Sugira criar ou ajustar uma regra quando:
 - um padrão novo aparecer em 3 ou mais arquivos;
-- o mesmo erro se repetir;
+- o mesmo erro voltar a acontecer;
 - a equipe der o mesmo feedback em revisões diferentes;
 - uma regra ficar desatualizada (marque como depreciada em vez de apagar sem aviso).
 
 Como sugerir:
-1. Mostre a mudança proposta (diff) **antes** de salvar.
-2. Explique o motivo com um exemplo real do código.
-3. Só salve depois da aprovação da equipe, em uma branch `docs/regras-...` com PR.
+1. Mostre o diff proposto **antes** de gravar e espere a confirmação.
+2. Explique o motivo com o caso real do código.
+3. Grave em uma branch `docs/regras-...` e abra um PR.
+
+## 4. Exemplo
+Erro real (o painel do EcoBot herdou o `padding` global de `section`) que virou
+regra no commit `884fb06`, em `.cursor/rules/css-estilo.mdc`:
+```diff
+ - Duplicar uma regra que já existe em outro bloco.
++- Usar `<section>` dentro de um componente (painel, widget) sem `padding: 0`: toda
++  `section` herda `padding: 4rem 0` do CSS global (aconteceu no painel do EcoBot).
+```
+
+## 5. Erros a evitar
+- Gravar uma mudança de regra sem mostrar o diff e sem confirmação.
+- Criar regra para um caso que só apareceu uma vez.
+- Apagar uma regra antiga sem avisar a equipe.
+
+## 6. Perguntas
+Se não estiver claro se o padrão é intencional ou um erro, pergunte antes de propor a regra.

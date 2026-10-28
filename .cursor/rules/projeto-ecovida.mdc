@@ -13,7 +13,8 @@ tecnologia, estilo ou conteúdo.
 - Portal educativo sobre reciclagem, consumo consciente e economia de água e energia
   em São Paulo. Slogan: "Transforme sua Cidade, Comece por Você."
 - Projeto acadêmico UNICID, Front-End, 2026.2. Entrega: 09/11/2026, com o site no ar.
-- Plano completo: @docs/plano-contexto.md (leia antes de tarefas grandes).
+- Plano de contexto (visão completa, não repetida aqui): @docs/plano-contexto.md.
+  Leia antes de tarefas grandes.
 - Site no ar: https://ecovida2026.up.railway.app/ (deploy automático a cada push na `main`).
 - Stack: HTML5, CSS3 e JavaScript puros; Node.js + Express no Railway. Sem frameworks.
 
@@ -28,8 +29,13 @@ tecnologia, estilo ou conteúdo.
 - Toda tarefa em uma branch própria, com PR revisado pela equipe antes do merge.
 
 ## 4. Exemplo
-Pedido: "crie a seção de dicas" → seguir @html-semantico.mdc e @css-estilo.mdc,
-reaproveitar `.category-card` e não criar números de impacto novos.
+Número de impacto sempre com o aviso de ilustrativo (`public/projetos.html`):
+```html
+<p class="stat-value">+5.000</p>
+<p class="stat-label">Pessoas engajadas</p>
+...
+<p class="stats-note">* Números ilustrativos/fictícios nesta entrega.</p>
+```
 
 ## 5. Erros a evitar
 - Usar Bootstrap, Tailwind, React ou qualquer framework.

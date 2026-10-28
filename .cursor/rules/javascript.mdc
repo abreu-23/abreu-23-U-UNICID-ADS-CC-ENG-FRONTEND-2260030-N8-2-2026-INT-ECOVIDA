@@ -1,0 +1,55 @@
+---
+description: JavaScript do EcoVida Urbana — servidor Node.js/Express e scripts do navegador
+globs: **/*.js, **/*.mjs
+alwaysApply: false
+---
+
+# JavaScript — EcoVida Urbana
+
+## 1. Objetivo
+JavaScript pequeno, seguro e opcional: o site precisa funcionar completo sem ele.
+
+## 2. Contexto
+- Servidor: `server.js` (Express 5, ES modules) e `lib/faq.js` (respostas do EcoBot).
+- Navegador: `public/js/ecobot.js`, `acessibilidade.js` e `menu.js`, carregados com `defer`.
+- Ferramenta: `scripts/otimizar-imagens.mjs` (`npm run imagens`).
+- Sem frameworks nem bibliotecas no navegador. Node.js 20 ou mais recente.
+
+## 3. Regras
+- Servidor e scripts em ES modules (`import`); navegador em função autoexecutável
+  `(function () { ... })();`, sem variáveis globais.
+- Melhoria progressiva: o JS cria os próprios botões; sem JS, nada some do site.
+- Conteúdo dinâmico com `createElement` e `textContent`, nunca `innerHTML` com dados.
+- Acessibilidade: `aria-expanded`/`aria-pressed` atualizados, `Esc` fecha e devolve o foco.
+- `localStorage` sempre dentro de `try/catch`; `fetch` sempre com tratamento de erro.
+- No servidor, valide toda entrada antes de usar e responda erros em português.
+- Segredos só em `process.env` (`.env` fora do Git); nunca registre dados do usuário em log.
+- Nomes e comentários em português, em camelCase (`perguntar`, `montarWidget`).
+- Teste antes do PR: `node --check arquivo.js` e `npm start`.
+
+## 4. Exemplo
+Validação de entrada na rota do EcoBot (`server.js`):
+```js
+app.post("/api/assistente", (req, res) => {
+  const pergunta = req.body?.pergunta;
+
+  if (typeof pergunta !== "string" || !pergunta.trim()) {
+    return res.status(400).json({ erro: "Envie uma pergunta em texto." });
+  }
+  if (pergunta.length > TAMANHO_MAXIMO_PERGUNTA) {
+    return res.status(400).json({ erro: `A pergunta pode ter até ${TAMANHO_MAXIMO_PERGUNTA} caracteres.` });
+  }
+
+  res.json(responder(pergunta));
+});
+```
+
+## 5. Erros a evitar
+- `innerHTML` com texto vindo do usuário ou do servidor (risco de injeção).
+- Adicionar jQuery, React ou outra biblioteca no navegador.
+- Chave de API no código ou no front-end.
+- `console.log` com perguntas, e-mails ou outros dados de quem usa o site.
+- Esconder conteúdo no HTML esperando que o JS mostre.
+
+## 6. Perguntas
+Antes de criar um script novo ou adicionar uma dependência no `package.json`, pergunte.

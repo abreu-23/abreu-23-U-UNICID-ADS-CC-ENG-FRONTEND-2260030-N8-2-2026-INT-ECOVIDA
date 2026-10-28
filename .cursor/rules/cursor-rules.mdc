@@ -1,16 +1,46 @@
 ---
-description: Como criar e manter as regras do projeto
+description: Como criar e manter as regras do projeto EcoVida Urbana
 alwaysApply: true
 ---
 
 # Como escrever regras
 
-- Toda regra fica em `.cursor/rules/`, com nome em kebab-case e extensão `.mdc`.
-- Cabeçalho obrigatório: `description`, e `globs` ou `alwaysApply`.
-- Use `alwaysApply: true` só para o essencial (gasta contexto em toda conversa).
-- Estrutura em 6 pontos: Objetivo, Contexto, Regras, Exemplos, Erros a evitar, Perguntas.
-- Exemplos vêm do código real do projeto, não de casos genéricos.
-- Curta e objetiva: se passar de ~80 linhas, divida em duas regras.
+## 1. Objetivo
+Manter as regras curtas, consistentes e fáceis de a IA aplicar no momento certo.
 
-Bom: `globs: **/*.html` com exemplo tirado de `projetos.html`.
-Ruim: "escreva HTML bom" sem exemplo nem lista do que evitar.
+## 2. Contexto
+- Regras ficam em `.cursor/rules/`, uma por assunto, versionadas no Git.
+- O plano de contexto fica em `docs/plano-contexto.md` e não é repetido nas regras.
+
+## 3. Regras
+- Nome em kebab-case, extensão `.mdc` (ex.: `html-semantico.mdc`).
+- Frontmatter com `description` e um modo de aplicação:
+  - `alwaysApply: true` só na visão do projeto, nesta regra e na melhoria contínua;
+  - `globs` para regras de tipo de arquivo (HTML, CSS, JavaScript);
+  - só `description` para aplicação inteligente (ex.: acessibilidade);
+  - sem `globs` e com `alwaysApply: false` para uso manual com `@nome` (ex.: commits).
+- Corpo com 6 seções, nesta ordem: Objetivo, Contexto, Regras, Exemplo, Erros a evitar,
+  Perguntas.
+- Uma preocupação por arquivo e menos de 80 linhas.
+- Exemplo copiado de um arquivo real do repositório, citando o arquivo de origem.
+
+## 4. Exemplo
+Frontmatter real de `.cursor/rules/html-semantico.mdc`:
+```
+---
+description: HTML5 semântico e acessível nas páginas do EcoVida Urbana
+globs: **/*.html
+alwaysApply: false
+---
+```
+
+## 5. Erros a evitar
+- Regra em `docs/`, na raiz ou com extensão `.md`.
+- Dois assuntos no mesmo arquivo.
+- Regra longa com `alwaysApply: true`.
+- Exemplo genérico ou de outro projeto (ex.: EcoConecta).
+- Chave de API, token ou dado pessoal dentro de uma regra.
+
+## 6. Perguntas
+Antes de criar uma regra, pergunte se ela deve valer sempre, só para alguns arquivos
+ou só quando for citada, e se faltar stack, lista de páginas ou idioma.
