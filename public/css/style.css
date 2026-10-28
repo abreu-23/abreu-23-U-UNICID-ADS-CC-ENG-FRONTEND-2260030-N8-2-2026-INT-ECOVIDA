@@ -1513,6 +1513,8 @@ body:has(.ecobot) .site-footer {
   border-radius: var(--radius);
   box-shadow: 0 16px 40px rgba(20, 40, 30, 0.22);
   overflow: hidden;
+  /* O painel é uma <section>: zera o padding global de section */
+  padding: 0;
 }
 
 .ecobot-painel[hidden] {
@@ -1547,6 +1549,7 @@ body:has(.ecobot) .site-footer {
 
 .ecobot-mensagens {
   flex: 1;
+  min-height: 9rem;
   overflow-y: auto;
   padding: 1rem;
   display: flex;
