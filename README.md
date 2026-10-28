@@ -317,7 +317,7 @@ Abrir os arquivos `.html` direto no navegador também funciona para ver as pági
 **Uso de IA:** a equipe usa assistentes de IA (Claude Code) para gerar e revisar código e textos. Todo resultado é revisado e validado pela equipe antes do merge. A IA trabalha com contexto organizado:
 
 - [`docs/plano-contexto.md`](docs/plano-contexto.md): o que é o projeto (11 seções do modelo da aula).
-- [`.cursor/rules/`](.cursor/rules/): como o código deve ser feito (HTML semântico, CSS, acessibilidade, commits).
+- [`.cursor/rules/`](.cursor/rules/): como o código deve ser feito (HTML semântico, CSS, JavaScript, acessibilidade, commits).
 
 ## 📅 Cronograma
 

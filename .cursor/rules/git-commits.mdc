@@ -25,11 +25,15 @@ Histórico claro, que mostre a evolução da equipe (20% da rubrica).
 - Quem abriu o PR não aprova o próprio merge; outro integrante revisa.
 
 ## 4. Exemplo
+Trecho de um commit real da branch `feat/menu-mobile` (PR #18):
 ```
-feat: adiciona botão de leitura por voz
+feat: adiciona menu recolhível no celular
 
-Usa a API speechSynthesis do navegador. O botão só aparece
-quando o navegador suporta a API.
+- js/menu.js cria o botão "Menu" com aria-expanded e aria-controls;
+  Esc fecha e devolve o foco ao botão
+- Sem JavaScript, o menu continua todo visível
+
+Closes #9
 ```
 
 ## 5. Erros a evitar

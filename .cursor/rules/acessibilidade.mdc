@@ -31,11 +31,20 @@ deficiência visual, motora, auditiva e cognitiva.
   são melhorias que aparecem só quando o JS carrega.
 
 ## 4. Exemplo
+Campo com rótulo visível, autocomplete e dica ligada (`public/contato.html`):
 ```html
 <div class="form-field">
   <label for="telefone">Telefone (opcional)</label>
-  <input id="telefone" type="tel" autocomplete="tel" aria-describedby="telefone-dica" />
-  <span class="form-hint" id="telefone-dica">Formato: (11) 90000-0000</span>
+  <input
+    id="telefone"
+    name="telefone"
+    type="tel"
+    autocomplete="tel"
+    pattern="\(\d{2}\) \d{4,5}-\d{4}"
+    placeholder="(11) 90000-0000"
+    aria-describedby="telefone-dica"
+  />
+  <span class="form-hint" id="telefone-dica">Formato: (11) 90000-0000, com DDD entre parênteses.</span>
 </div>
 ```
 
