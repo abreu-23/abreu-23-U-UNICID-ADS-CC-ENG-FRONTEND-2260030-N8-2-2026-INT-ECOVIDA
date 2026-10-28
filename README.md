@@ -193,7 +193,7 @@ O próprio site segue o que ensina.
 
 ### 📱 Responsividade
 - `meta viewport`, contêiner de até 1160 px, Grid e Flexbox, medidas em `rem`, `%` e `fr`, títulos com `clamp()`.
-- **Até 960 px:** o menu desce para uma linha própria e os blocos de dois lados viram uma coluna.
+- **Até 960 px:** o menu vira um botão "Menu" que abre a lista em coluna (sem JavaScript, ela fica sempre visível) e os blocos de dois lados viram uma coluna.
 - **Até 860 px:** cartões, estatísticas e rodapé empilham.
 - Imagens com `max-width: 100%` e `object-fit: cover`; vídeo e iframe em 16:9.
 - Tabelas com `overflow-x` próprio, campos de formulário na largura total e botões com ~44 px de altura.
@@ -268,7 +268,7 @@ ecovida-urbana/
 ├── public/             # o site, servido pelo Express
 │   ├── *.html          # as 12 páginas
 │   ├── css/style.css   # folha de estilo única
-│   ├── js/             # ecobot.js e acessibilidade.js
+│   ├── js/             # ecobot.js, acessibilidade.js e menu.js
 │   ├── img/            # fotos do Pixabay em WebP
 │   ├── assets/         # legendas (.vtt); vídeo e áudio quando publicados
 │   └── favicon.svg
@@ -330,7 +330,8 @@ Abrir os arquivos `.html` direto no navegador também funciona para ver as pági
 | Plano de contexto, regras, issues e PRs (Aula 06) | ✅ Concluído |
 | Servidor Express, EcoBot e barra de acessibilidade | ✅ Concluído |
 | Orçamento alinhado ao Railway e imagens locais em WebP (issues #11 e #8) | ✅ Concluído |
-| Menu no celular e mídia real (issues #9 e #10) | 🔄 Em andamento |
+| Menu recolhível no celular (issue #9) | ✅ Concluído |
+| Vídeo e áudio reais na página de Mídia (issue #10) | 🔄 Em andamento |
 | **Entrega final** | **09/11/2026** |
 
 ---
@@ -359,7 +360,6 @@ Abrir os arquivos `.html` direto no navegador também funciona para ver as pági
 - EcoBot por FAQ, sem IA paga; a integração com IA fica como evolução opcional.
 
 ### 🔮 Próximas etapas
-- Menu recolhível no celular (issue #9).
 - Vídeo e episódio do podcast reais na página de Mídia (issue #10).
 - EcoBot com IA e contador de impacto em tempo real.
 
