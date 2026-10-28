@@ -189,7 +189,7 @@ O próprio site segue o que ensina.
 - CSS único, sem frameworks; JavaScript pequeno e só onde agrega (EcoBot e barra de acessibilidade), carregado com `defer`.
 - Conteúdo aberto, sem cadastro obrigatório, que funciona em celulares simples e conexões lentas.
 - Comparativo de hospedagem verde (energia renovável, compensação de carbono, localização do data center), com apoio do Green Web Check.
-- **Pendente:** baixar as fotos do Pixabay para `img/` em WebP de até 200 KB (issue #8). Hoje elas vêm do CDN do Pixabay.
+- Fotos do Pixabay salvas em `public/img/` em WebP, até 200 KB cada (800 px no conteúdo, 1280 px nos fundos), geradas pelo script `npm run imagens`. O peso total das fotos caiu de 6,4 MB para 2,1 MB.
 
 ### 📱 Responsividade
 - `meta viewport`, contêiner de até 1160 px, Grid e Flexbox, medidas em `rem`, `%` e `fr`, títulos com `clamp()`.
@@ -269,10 +269,12 @@ ecovida-urbana/
 │   ├── *.html          # as 12 páginas
 │   ├── css/style.css   # folha de estilo única
 │   ├── js/             # ecobot.js e acessibilidade.js
+│   ├── img/            # fotos do Pixabay em WebP
 │   ├── assets/         # legendas (.vtt); vídeo e áudio quando publicados
 │   └── favicon.svg
 ├── server.js           # servidor Node.js + Express
-├── package.json        # dependências e script "npm start"
+├── scripts/            # otimizar-imagens.mjs (npm run imagens)
+├── package.json        # dependências e scripts "npm start" e "npm run imagens"
 ├── .gitignore          # ignora .env e node_modules/
 └── .gitattributes      # quebras de linha padronizadas (LF)
 ```
@@ -327,7 +329,8 @@ Abrir os arquivos `.html` direto no navegador também funciona para ver as pági
 | Publicação no Railway | ✅ Concluído |
 | Plano de contexto, regras, issues e PRs (Aula 06) | ✅ Concluído |
 | Servidor Express, EcoBot e barra de acessibilidade | ✅ Concluído |
-| Imagens locais, menu no celular, mídia real, orçamento (issues #8 a #11) | 🔄 Em andamento |
+| Orçamento alinhado ao Railway e imagens locais em WebP (issues #11 e #8) | ✅ Concluído |
+| Menu no celular e mídia real (issues #9 e #10) | 🔄 Em andamento |
 | **Entrega final** | **09/11/2026** |
 
 ---
@@ -346,7 +349,7 @@ Abrir os arquivos `.html` direto no navegador também funciona para ver as pági
 | Conflito ou perda de arquivos | Uma branch por tarefa, PR revisado e cópia no GitHub |
 | Deploy quebrado | Teste local com `npm start` antes do PR; o Railway só troca a versão se o build der certo |
 | Chave ou segredo vazado | `.env` no `.gitignore`; chaves só nas Variables do Railway |
-| Imagens indisponíveis ou pesadas | Baixar para `img/` e comprimir (issue #8) |
+| Imagens indisponíveis ou pesadas | Fotos locais em `public/img/`, em WebP de até 200 KB |
 
 ### Restrições desta entrega
 
@@ -356,9 +359,8 @@ Abrir os arquivos `.html` direto no navegador também funciona para ver as pági
 - EcoBot por FAQ, sem IA paga; a integração com IA fica como evolução opcional.
 
 ### 🔮 Próximas etapas
-- Fotos locais em WebP (issue #8) e menu recolhível no celular (issue #9).
+- Menu recolhível no celular (issue #9).
 - Vídeo e episódio do podcast reais na página de Mídia (issue #10).
-- Alinhar a página de orçamento com a hospedagem no Railway (issue #11).
 - EcoBot com IA e contador de impacto em tempo real.
 
 ---
