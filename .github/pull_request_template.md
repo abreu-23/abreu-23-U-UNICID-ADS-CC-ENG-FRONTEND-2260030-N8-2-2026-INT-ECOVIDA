@@ -2,7 +2,7 @@
 
 <!-- Resuma em 1 a 3 linhas. -->
 
-Fecha #<!-- número da issue -->
+Closes #<!-- número da issue (use "Closes": o GitHub só entende a palavra em inglês) -->
 
 ## Como testar
 

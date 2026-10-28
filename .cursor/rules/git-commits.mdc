@@ -20,6 +20,7 @@ Histórico claro, que mostre a evolução da equipe (20% da rubrica).
 - Mensagem de commit em português, no imperativo, com prefixo:
   `tipo: descrição curta` (até ~60 caracteres) + corpo com o "porquê", se preciso.
 - Commits pequenos: uma mudança lógica por commit.
+- Na descrição do PR, escreva `Closes #N` (em inglês: "Fecha #N" não fecha a issue).
 - PR com: o que mudou, como testar, e checklist (W3C, teclado, contraste, 360/768/1280 px).
 - Quem abriu o PR não aprova o próprio merge; outro integrante revisa.
 

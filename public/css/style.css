@@ -1659,3 +1659,119 @@ body:has(.ecobot) .site-footer {
     display: none;
   }
 }
+
+/* =========================================================
+   Barra de acessibilidade (criada por js/acessibilidade.js)
+   ========================================================= */
+.barra-acessibilidade {
+  background: var(--primary-dark);
+  color: var(--white);
+}
+
+.barra-acessibilidade-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.barra-acessibilidade-botao {
+  min-height: 2.75rem;
+  padding: 0.35rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.barra-acessibilidade-botao:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.barra-acessibilidade-botao[aria-pressed="true"] {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.barra-acessibilidade-botao:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   Modo alto contraste (classe .alto-contraste no <html>)
+   Exceção à regra "sem !important": o modo precisa vencer
+   todas as cores do site de uma vez, de qualquer componente.
+   Preto, branco e amarelo: contraste acima de 13:1.
+   ========================================================= */
+.alto-contraste,
+.alto-contraste body,
+.alto-contraste * {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.alto-contraste .hero,
+.alto-contraste .highlight-image {
+  background-image: none !important;
+}
+
+.alto-contraste .hero-overlay,
+.alto-contraste .section-wave {
+  display: none;
+}
+
+.alto-contraste a,
+.alto-contraste a * {
+  color: #ffd60a !important;
+  text-decoration: underline;
+}
+
+.alto-contraste .btn,
+.alto-contraste button,
+.alto-contraste .chip-nav a,
+.alto-contraste .highlight-tag {
+  color: #ffd60a !important;
+  border: 2px solid #ffd60a !important;
+}
+
+.alto-contraste .barra-acessibilidade-botao[aria-pressed="true"] {
+  color: #000 !important;
+  background-color: #ffd60a !important;
+}
+
+/* Mensagens do EcoBot ganham borda para não se perderem no fundo preto */
+.alto-contraste .ecobot-msg {
+  border: 1px solid #fff !important;
+}
+
+.alto-contraste input,
+.alto-contraste select,
+.alto-contraste textarea {
+  border: 2px solid #fff !important;
+}
+
+.alto-contraste ::placeholder {
+  color: #ccc !important;
+}
+
+.alto-contraste :focus-visible {
+  outline: 3px solid #ffd60a !important;
+  outline-offset: 2px;
+}
+
+@media print {
+  .barra-acessibilidade {
+    display: none;
+  }
+}
