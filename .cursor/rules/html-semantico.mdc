@@ -10,11 +10,11 @@ alwaysApply: false
 Páginas semânticas, acessíveis e idênticas em estrutura às páginas já prontas.
 
 ## 2. Contexto
-- Cabeçalho, menu e rodapé são iguais em todas as páginas. Modelo: `projetos.html`.
-- Uma folha de estilo única: `css/style.css`. Ícones em SVG embutido.
+- Cabeçalho, menu e rodapé são iguais em todas as páginas. Modelo: `public/projetos.html`.
+- Páginas em `public/`. Uma folha de estilo única: `public/css/style.css` (no HTML o link continua `css/style.css`). Ícones em SVG embutido.
 
 ## 3. Regras
-- Copie `header`, `nav` e `footer` de `projetos.html` sem mudar a estrutura. Mude só:
+- Copie `header`, `nav` e `footer` de `public/projetos.html` sem mudar a estrutura. Mude só:
   `title`, `meta description` e o `aria-current="page"` do item atual do menu.
 - `lang="pt-BR"`, `meta charset` e `viewport` em todas as páginas.
 - `title` no formato "Página — EcoVida Urbana"; `meta description` com 120 a 160 caracteres.

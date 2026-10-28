@@ -1,0 +1,11 @@
+# Quebras de linha padronizadas (LF) para todos os integrantes,
+# inclusive quem usa Windows
+* text=auto eol=lf
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.mp3 binary
+*.mp4 binary

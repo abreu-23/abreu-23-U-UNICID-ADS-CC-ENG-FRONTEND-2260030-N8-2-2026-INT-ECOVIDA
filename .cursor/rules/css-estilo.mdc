@@ -10,7 +10,7 @@ alwaysApply: false
 Manter um CSS único, consistente e sem duplicação.
 
 ## 2. Contexto
-- Um só arquivo: `css/style.css`, organizado em blocos comentados: base, componentes
+- Um só arquivo: `public/css/style.css`, organizado em blocos comentados: base, componentes
   da home, "Componentes compartilhados" e um bloco por página ("Página Projetos" etc.).
 - Classes em inglês, em kebab-case (`.category-card`, `.project-meta`, `.hero-page`).
   Padrão já adotado no projeto: mantenha-o em vez de migrar para BEM.
