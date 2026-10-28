@@ -49,8 +49,13 @@ hábitos.
 - Tabelas de impacto, galeria por tema, mapa (OpenStreetMap) com lista em texto,
   transcrições de vídeo e podcast.
 
+- **EcoBot:** assistente de dúvidas em todas as páginas (`public/js/ecobot.js`),
+  respondido pela rota `/api/assistente` com um FAQ por palavras-chave (`lib/faq.js`),
+  sem IA e sem custo. As perguntas não são guardadas.
+
 **Planejadas**
-- **EcoBot:** assistente de dúvidas (FAQ + API de IA) via rota `/api/assistente`.
+- **EcoBot com IA (opcional):** trocar `responder()` de `lib/faq.js` por uma chamada a
+  uma API de IA, com a chave só no `.env` e nas Variables do Railway.
 - **Barra de acessibilidade:** leitura da página por voz e modo alto contraste.
 - Vídeo e áudio reais na página de mídia (hoje só transcrições).
 
