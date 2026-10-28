@@ -1,0 +1,16 @@
+---
+description: Como criar e manter as regras do projeto
+alwaysApply: true
+---
+
+# Como escrever regras
+
+- Toda regra fica em `.cursor/rules/`, com nome em kebab-case e extensão `.mdc`.
+- Cabeçalho obrigatório: `description`, e `globs` ou `alwaysApply`.
+- Use `alwaysApply: true` só para o essencial (gasta contexto em toda conversa).
+- Estrutura em 6 pontos: Objetivo, Contexto, Regras, Exemplos, Erros a evitar, Perguntas.
+- Exemplos vêm do código real do projeto, não de casos genéricos.
+- Curta e objetiva: se passar de ~80 linhas, divida em duas regras.
+
+Bom: `globs: **/*.html` com exemplo tirado de `projetos.html`.
+Ruim: "escreva HTML bom" sem exemplo nem lista do que evitar.

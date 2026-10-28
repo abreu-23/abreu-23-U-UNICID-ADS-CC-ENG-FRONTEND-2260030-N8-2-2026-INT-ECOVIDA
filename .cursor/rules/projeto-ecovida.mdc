@@ -1,0 +1,39 @@
+---
+description: Visão geral do projeto EcoVida Urbana e onde está o plano de contexto
+alwaysApply: true
+---
+
+# Projeto EcoVida Urbana
+
+## 1. Objetivo
+Dar à IA o contexto mínimo do projeto em toda conversa, para que ela não invente
+tecnologia, estilo ou conteúdo.
+
+## 2. Contexto
+- Portal educativo sobre reciclagem, consumo consciente e economia de água e energia
+  em São Paulo. Slogan: "Transforme sua Cidade, Comece por Você."
+- Projeto acadêmico UNICID, Front-End, 2026.2. Entrega: 09/11/2026, com o site no ar.
+- Plano completo: @docs/plano-contexto.md (leia antes de tarefas grandes).
+- Site no ar: https://ecovida2026.up.railway.app/ (deploy automático a cada push na `main`).
+- Stack: HTML5, CSS3 e JavaScript puros; Node.js + Express no Railway. Sem frameworks.
+
+## 3. Regras
+- Textos em português do Brasil, tom acolhedor e inspirador (esperança e ação,
+  não pessimismo climático).
+- Dados de impacto são **ilustrativos** e precisam estar sinalizados. Números oficiais:
+  +5.000 pessoas engajadas, +200 dicas, 128.430 kg reciclados, 5 projetos, 12 bairros.
+- Imagens apenas do Pixabay, com crédito "Foto: usuário / Pixabay". Nunca invente URL
+  ou autor: confira na página da foto.
+- Toda tarefa em uma branch própria, com PR revisado pela equipe antes do merge.
+
+## 4. Exemplo
+Pedido: "crie a seção de dicas" → seguir @html-semantico.mdc e @css-estilo.mdc,
+reaproveitar `.category-card` e não criar números de impacto novos.
+
+## 5. Erros a evitar
+- Usar Bootstrap, Tailwind, React ou qualquer framework.
+- Colocar chaves de API no código (use `.env`).
+- Fazer push direto na `main` ou redeploy sem perguntar.
+
+## 6. Perguntas
+Se faltar conteúdo, imagem, fonte ou decisão de escopo, pergunte antes de inventar.

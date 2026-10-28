@@ -1,0 +1,49 @@
+---
+description: Use ao criar ou revisar páginas, formulários, mídia, cores ou componentes interativos — garante WCAG 2.1 AA no EcoVida Urbana
+alwaysApply: false
+---
+
+# Acessibilidade — EcoVida Urbana
+
+## 1. Objetivo
+Atingir WCAG 2.1 nível AA em todas as páginas. Público prioritário: pessoas com
+deficiência visual, motora, auditiva e cognitiva.
+
+## 2. Contexto
+- Referências: WCAG 2.1 e Lei Brasileira de Inclusão (Lei nº 13.146/2015, art. 63).
+- A página `acessibilidade.html` descreve publicamente o que o site cumpre: mantenha-a
+  coerente com o que o código faz.
+
+## 3. Regras
+- **Teclado:** tudo funciona com Tab, Shift+Tab, Enter e Espaço; ordem de foco igual à
+  visual; nenhuma armadilha de foco. O 1º link da página é "Pular para o conteúdo".
+- **Contraste:** texto ≥ 4,5:1; texto grande e bordas de campo ≥ 3:1. Confira no
+  WebAIM Contrast Checker antes de criar uma cor nova.
+- **Cor:** nenhuma informação depende só da cor (use texto ou ícone junto).
+- **Formulários:** `label for` visível, "(obrigatório)" escrito no label, dicas com
+  `aria-describedby`, `autocomplete` em nome, e-mail e telefone.
+- **Mídia:** sem autoplay, sempre `controls`, legenda (`track`) ou transcrição.
+  `iframe` com `title`.
+- **Tabelas:** `caption`, `th scope`, contêiner `.table-wrap` com `role="region"`,
+  `aria-labelledby` e `tabindex="0"`.
+- **ARIA:** só quando o HTML nativo não resolve. Prefira `button`, `details`/`summary`.
+- **JavaScript:** o site deve funcionar sem JS; recursos em JS (ex.: leitura por voz)
+  são melhorias que aparecem só quando o JS carrega.
+
+## 4. Exemplo
+```html
+<div class="form-field">
+  <label for="telefone">Telefone (opcional)</label>
+  <input id="telefone" type="tel" autocomplete="tel" aria-describedby="telefone-dica" />
+  <span class="form-hint" id="telefone-dica">Formato: (11) 90000-0000</span>
+</div>
+```
+
+## 5. Erros a evitar
+- `div` ou `span` clicável no lugar de `button` ou `a`.
+- Remover o `outline` de foco.
+- `alt` vazio em imagem informativa, ou `alt` repetindo a legenda.
+- Prometer na página de acessibilidade algo que o site não faz.
+
+## 6. Perguntas
+Se um recurso visual ou interativo puder excluir alguém, aponte o risco e pergunte.

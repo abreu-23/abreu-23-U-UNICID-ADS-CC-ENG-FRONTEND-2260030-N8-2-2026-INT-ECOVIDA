@@ -1,0 +1,51 @@
+---
+description: Padrões de CSS do EcoVida Urbana
+globs: **/*.css
+alwaysApply: false
+---
+
+# CSS — EcoVida Urbana
+
+## 1. Objetivo
+Manter um CSS único, consistente e sem duplicação.
+
+## 2. Contexto
+- Um só arquivo: `css/style.css`, organizado em blocos comentados: base, componentes
+  da home, "Componentes compartilhados" e um bloco por página ("Página Projetos" etc.).
+- Classes em inglês, em kebab-case (`.category-card`, `.project-meta`, `.hero-page`).
+  Padrão já adotado no projeto: mantenha-o em vez de migrar para BEM.
+
+## 3. Regras
+- Use as variáveis de `:root`: `--primary`, `--primary-dark`, `--secondary`, `--accent`,
+  `--lime`, `--bg`, `--white`, `--text`, `--text-soft`, `--ink-on-mint`, `--radius*`.
+- Reaproveite antes de criar: `.container`, `.section-title`, `.category-card`,
+  `.highlight-grid`, `.data-table`, `.disclosure`, `.chip-nav`, `.cta-final`.
+- Regra nova vai no FIM do arquivo, no bloco comentado da página
+  ("Página Nome"). Componente usado em 2+ páginas vai em "Componentes compartilhados".
+- Breakpoints do projeto (desktop-first): `max-width: 960px` (blocos em coluna) e
+  `max-width: 860px` (cartões empilham).
+- Medidas em `rem`, `%` e `fr`; títulos com `clamp()`.
+- Foco visível: `outline: 3px solid var(--focus)`. Contraste mínimo de 4,5:1.
+- Animações curtas; `prefers-reduced-motion` já desliga todas.
+
+## 4. Exemplo
+```css
+/* =========================================================
+   Página Galeria
+   ========================================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+```
+
+## 5. Erros a evitar
+- `!important` (resolva com especificidade, ex.: `.category-card .step-number`).
+- Cores soltas em hexadecimal quando já existe variável.
+- Texto pequeno sobre `--secondary` (verde menta) com cor diferente de `--ink-on-mint`:
+  reprova no contraste.
+- Duplicar uma regra que já existe em outro bloco.
+
+## 6. Perguntas
+Se uma mudança visual afetar todas as páginas, avise e pergunte antes.

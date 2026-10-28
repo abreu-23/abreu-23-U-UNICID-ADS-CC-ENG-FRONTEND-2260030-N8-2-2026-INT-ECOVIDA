@@ -1,0 +1,47 @@
+---
+description: HTML5 semântico e acessível nas páginas do EcoVida Urbana
+globs: **/*.html
+alwaysApply: false
+---
+
+# HTML semântico — EcoVida Urbana
+
+## 1. Objetivo
+Páginas semânticas, acessíveis e idênticas em estrutura às páginas já prontas.
+
+## 2. Contexto
+- Cabeçalho, menu e rodapé são iguais em todas as páginas. Modelo: `projetos.html`.
+- Uma folha de estilo única: `css/style.css`. Ícones em SVG embutido.
+
+## 3. Regras
+- Copie `header`, `nav` e `footer` de `projetos.html` sem mudar a estrutura. Mude só:
+  `title`, `meta description` e o `aria-current="page"` do item atual do menu.
+- `lang="pt-BR"`, `meta charset` e `viewport` em todas as páginas.
+- `title` no formato "Página — EcoVida Urbana"; `meta description` com 120 a 160 caracteres.
+- Um único `h1`; `h2`/`h3` sem pular níveis (inclusive dentro de `details`).
+- Toda `section` com `aria-labelledby` apontando para o id do seu título.
+- Toda `img` com `alt` descritivo, `width`, `height` reais e `loading="lazy"`
+  abaixo da dobra. Foto com crédito em `.photo-credit`.
+- SVG decorativo com `aria-hidden="true" focusable="false"`.
+- Textos de link que dizem o destino; nunca vários "Saiba mais" iguais.
+- Comentários em português, indentação de 2 espaços.
+
+## 4. Exemplo
+```html
+<!-- NOSSOS PROJETOS -->
+<section class="project-list" id="lista-projetos" aria-labelledby="projetos-titulo">
+  <div class="container">
+    <p class="section-label">Mãos à obra</p>
+    <h2 class="section-title" id="projetos-titulo">Nossos projetos</h2>
+  </div>
+</section>
+```
+
+## 5. Erros a evitar
+- `div` no lugar de `header`, `nav`, `main`, `section`, `article` ou `footer`.
+- `style=""` inline (o projeto tem zero; crie uma classe no CSS).
+- `placeholder` no lugar de `label` em formulários.
+- Mais de um `h1` por página.
+
+## 6. Perguntas
+Na dúvida sobre conteúdo, imagem ou em qual página algo deve ficar, pergunte antes.
