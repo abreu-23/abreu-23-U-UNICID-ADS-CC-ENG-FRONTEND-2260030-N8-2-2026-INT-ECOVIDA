@@ -78,7 +78,7 @@ São **10 páginas HTML5** do escopo, mais 2 páginas de apoio, ligadas por um c
 | 4 | `impacto.html` | Resultado coletivo em dados | Tabelas com legenda: materiais reciclados por tipo, economia de água e energia, pessoas engajadas por projeto (valores ilustrativos) |
 | 5 | `acessibilidade.html` | Medidas de inclusão | Compromisso WCAG, recursos aplicados, atalhos de teclado, pontos de coleta acessíveis, limitações conhecidas e perguntas frequentes |
 | 6 | `galeria.html` | Registros visuais das ações | `figure` + `figcaption` por tema, `alt` descritivo, crédito da fonte e carregamento tardio |
-| 7 | `midia.html` | Vídeo, áudio e mapa | Transcrição do vídeo e roteiro do podcast (arquivos em produção), mapa do OpenStreetMap e lista dos pontos de coleta em texto |
+| 7 | `midia.html` | Vídeo, áudio e mapa | Vídeo "Como separar o lixo em casa" e episódio 1 do podcast (gerados com IA a partir de roteiros da equipe), cada um com resumo em texto; mapa do OpenStreetMap e lista dos pontos de coleta em texto |
 | 8 | `noticias.html` | Notícias, artigos e dicas | Destaque "Hortas Urbanas", dicas das 3 categorias da home, notícias da rede e newsletter |
 | 9 | `contato.html` | Contato e adesão ao movimento | Formulário com validação HTML5 enviado por e-mail, outros canais e equipe |
 | 10 | `orcamento_hospedagem.html` | Decisão técnica de publicação | Comparativo de 3 hospedagens e 3 domínios, com tabela e justificativa (acesso pelo rodapé) |
@@ -179,7 +179,7 @@ A Lei Brasileira de Inclusão (Lei nº 13.146/2015, art. 63) serve de referênci
 - **Teclado:** Tab, Shift+Tab e Enter em tudo; ordem de foco igual à visual; foco de 3 px (`:focus-visible`) e sem armadilhas de foco.
 - **ARIA:** `lang="pt-BR"`, `aria-label` no `nav` e `aria-labelledby` nas seções. ARIA só entra quando o HTML nativo não resolve.
 - **Formulários:** `label for`, "(obrigatório)" escrito no rótulo, `autocomplete` em nome, e-mail e telefone.
-- **Multimídia:** sem autoplay, com `controls`, legenda (`track`) ou transcrição; `iframe` com `title`.
+- **Multimídia:** sem autoplay, com `controls` e versão em texto (resumo na mesma ordem); legenda (`track`) no vídeo assim que estiver sincronizada; `iframe` com `title`.
 - **Leitura:** fontes em `rem` (zoom até 200%), corpo de 16 px, linhas de ~60 caracteres, respeito a `prefers-reduced-motion` e leitura por voz opcional.
 
 ### 🌱 Sustentabilidade digital
@@ -270,7 +270,7 @@ ecovida-urbana/
 │   ├── css/style.css   # folha de estilo única
 │   ├── js/             # ecobot.js, acessibilidade.js e menu.js
 │   ├── img/            # fotos do Pixabay em WebP
-│   ├── assets/         # legendas (.vtt); vídeo e áudio quando publicados
+│   ├── assets/         # vídeo (.mp4) e áudio do podcast (.m4a)
 │   └── favicon.svg
 ├── server.js           # servidor Node.js + Express
 ├── scripts/            # otimizar-imagens.mjs (npm run imagens)
@@ -331,7 +331,8 @@ Abrir os arquivos `.html` direto no navegador também funciona para ver as pági
 | Servidor Express, EcoBot e barra de acessibilidade | ✅ Concluído |
 | Orçamento alinhado ao Railway e imagens locais em WebP (issues #11 e #8) | ✅ Concluído |
 | Menu recolhível no celular (issue #9) | ✅ Concluído |
-| Vídeo e áudio reais na página de Mídia (issue #10) | 🔄 Em andamento |
+| Vídeo e áudio reais na página de Mídia (issue #10) | ✅ Concluído |
+| Legenda sincronizada do vídeo | 🔄 Pendente |
 | **Entrega final** | **09/11/2026** |
 
 ---
@@ -360,7 +361,7 @@ Abrir os arquivos `.html` direto no navegador também funciona para ver as pági
 - EcoBot por FAQ, sem IA paga; a integração com IA fica como evolução opcional.
 
 ### 🔮 Próximas etapas
-- Vídeo e episódio do podcast reais na página de Mídia (issue #10).
+- Legenda sincronizada (.vtt) para o vídeo da página de Mídia.
 - EcoBot com IA e contador de impacto em tempo real.
 
 ---

@@ -47,7 +47,7 @@ hábitos.
 - Formulário de contato e newsletters com validação HTML5, enviados por e-mail
   via FormSubmit (aceito pelo professor).
 - Tabelas de impacto, galeria por tema, mapa (OpenStreetMap) com lista em texto,
-  transcrições de vídeo e podcast.
+  vídeo e podcast (gerados com IA a partir de roteiros da equipe) com resumo em texto.
 
 - **EcoBot:** assistente de dúvidas em todas as páginas (`public/js/ecobot.js`),
   respondido pela rota `/api/assistente` com um FAQ por palavras-chave (`lib/faq.js`),
@@ -57,7 +57,7 @@ hábitos.
 - **EcoBot com IA (opcional):** trocar `responder()` de `lib/faq.js` por uma chamada a
   uma API de IA, com a chave só no `.env` e nas Variables do Railway.
 - **Barra de acessibilidade:** leitura da página por voz e modo alto contraste.
-- Vídeo e áudio reais na página de mídia (hoje só transcrições).
+- Legenda sincronizada (.vtt) para o vídeo da página de mídia.
 
 ## 7. Stack técnica
 
@@ -97,7 +97,7 @@ hábitos.
 │   ├── css/style.css      # folha de estilo única
 │   ├── js/                # ecobot.js e acessibilidade.js
 │   ├── img/               # fotos em WebP (npm run imagens)
-│   ├── assets/legendas/   # legendas .vtt
+│   ├── assets/            # vídeo (.mp4) e áudio do podcast (.m4a)
 │   └── favicon.svg
 ├── server.js              # servidor Node.js + Express
 ├── package.json           # dependências e script "npm start"
