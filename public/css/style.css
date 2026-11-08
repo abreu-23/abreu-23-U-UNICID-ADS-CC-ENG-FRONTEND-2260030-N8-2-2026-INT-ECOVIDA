@@ -608,29 +608,6 @@ h2.section-title {
   text-decoration: underline;
 }
 
-.footer-social {
-  display: flex;
-  gap: 0.7rem;
-}
-
-.footer-social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.footer-social a:hover {
-  background: var(--secondary);
-}
-.footer-social svg {
-  width: 17px;
-  height: 17px;
-  fill: var(--white);
-}
-
 .footer-bottom {
   border-top: 1px solid rgba(207, 227, 214, 0.2);
   padding-top: 1.2rem;
