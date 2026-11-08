@@ -149,7 +149,7 @@ index.html
 
 **Cabeçalho fixo:** logo (→ home), menu com 9 links (Início, Sobre, Projetos, Impacto, Acessibilidade, Galeria, Mídia, Notícias e Contato) e botão "Junte-se ao Movimento" (→ contato). A página atual recebe `aria-current="page"`. Antes do cabeçalho vêm o link "Pular para o conteúdo principal" e a barra de acessibilidade.
 
-**Rodapé:** Mapa do site, Sobre nós, Orçamento de hospedagem, Política de Privacidade, Contato e ícones de Instagram, Facebook e LinkedIn (ilustrativos).
+**Rodapé:** Mapa do site, Sobre nós, Orçamento de hospedagem, Política de Privacidade e Contato.
 
 ### Fluxo de navegação
 
