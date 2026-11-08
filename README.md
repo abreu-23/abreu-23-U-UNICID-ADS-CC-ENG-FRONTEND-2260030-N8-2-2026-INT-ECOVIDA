@@ -28,13 +28,15 @@
 9. [Tecnologias](#-tecnologias)
 10. [Estrutura de pastas](#-estrutura-de-pastas)
 11. [Como executar](#-como-executar)
-12. [Equipe e responsabilidades](#-equipe-e-responsabilidades)
-13. [Fluxo de trabalho e uso de IA](#-fluxo-de-trabalho-e-uso-de-ia)
-14. [Cronograma](#-cronograma)
-15. [Riscos e restrições](#-riscos-e-restrições)
-16. [Critérios de aceitação](#-critérios-de-aceitação)
-17. [Aprovação do escopo](#-aprovação-do-escopo)
-18. [Créditos](#-créditos)
+12. [Hospedagem e orçamento](#️-hospedagem-e-orçamento)
+13. [Documentação](#-documentação)
+14. [Equipe e responsabilidades](#-equipe-e-responsabilidades)
+15. [Fluxo de trabalho e uso de IA](#-fluxo-de-trabalho-e-uso-de-ia)
+16. [Cronograma](#-cronograma)
+17. [Riscos e restrições](#-riscos-e-restrições)
+18. [Critérios de aceitação](#-critérios-de-aceitação)
+19. [Aprovação do escopo](#-aprovação-do-escopo)
+20. [Créditos](#-créditos)
 
 ---
 
@@ -293,6 +295,42 @@ npm start
 Abra http://localhost:3000 no navegador. Para mudar a porta, defina a variável `PORT`.
 
 Abrir os arquivos `.html` direto no navegador também funciona para ver as páginas, mas o EcoBot e o envio dos formulários só funcionam com o servidor rodando (ou no site publicado).
+
+---
+
+## ☁️ Hospedagem e orçamento
+
+O site está publicado no **Railway**, em https://ecovida2026.up.railway.app/, com HTTPS e deploy automático a cada merge na `main`. O comparativo completo e a justificativa estão na página [`orcamento_hospedagem.html`](public/orcamento_hospedagem.html) ([ver no site](https://ecovida2026.up.railway.app/orcamento_hospedagem.html)).
+
+| Hospedagem | Custo estimado | Roda o servidor do EcoBot? | Green Web Check |
+|---|---|---|---|
+| **Railway (escolhida)** | US$ 5 em créditos por 30 dias; depois, Hobby ~US$ 5/mês | Sim | Não verificada como verde |
+| Render | R$ 0 no plano gratuito (a confirmar) | Sim | Verde |
+| GitHub Pages | R$ 0 | Não, só arquivos estáticos | Verde |
+
+| Domínio | Custo anual estimado | Situação |
+|---|---|---|
+| ecovida2026.up.railway.app | Incluso no plano | **Em uso** na entrega |
+| ecovidaurbana.com.br (Registro.br) | ~R$ 40 | Para uma versão definitiva |
+| ecovidaurbana.com | ~US$ 10 a 15 (a confirmar) | Descartado: cobrança em dólar |
+
+**Por que o Railway:** é a plataforma adotada na disciplina, roda o servidor Node.js do EcoBot e publica sozinho a cada merge, com logs no painel.
+**Ponto fraco:** o Railway não aparece como hospedagem verde no Green Web Check (teste de 27/10/2026). Para compensar, o site é leve, com CSS único, JavaScript pequeno e imagens em WebP. Se a prioridade passar a ser a energia, a alternativa é o Render.
+
+> Valores aproximados de outubro de 2026, sujeitos a alteração e à variação do câmbio.
+
+## 📂 Documentação
+
+Tudo fica na pasta [`docs/`](docs/):
+
+| Arquivo | Conteúdo |
+|---|---|
+| [`escopo-ecovida-urbana.docx`](docs/escopo-ecovida-urbana.docx) / [`.pdf`](docs/escopo-ecovida-urbana.pdf) | Escopo do projeto (versão 2, revisada em 08/11/2026) |
+| [`plano-contexto.md`](docs/plano-contexto.md) | Plano de contexto para a IA (11 seções do modelo da aula) |
+| [`diario-de-bordo.md`](docs/diario-de-bordo.md) | Linha do tempo datada, prompts usados, o que foi aceito, corrigido e recusado |
+| [`melhorias-mvp.md`](docs/melhorias-mvp.md) | 10 melhorias desde a 1ª entrega, com prints de antes e depois |
+| [`evidencias-testes.md`](docs/evidencias-testes.md) | Resultados de W3C, Lighthouse, teclado, formulário e responsividade |
+| [`orcamento_hospedagem.html`](public/orcamento_hospedagem.html) | Orçamento de hospedagem e domínio (página do site) |
 
 ---
 
