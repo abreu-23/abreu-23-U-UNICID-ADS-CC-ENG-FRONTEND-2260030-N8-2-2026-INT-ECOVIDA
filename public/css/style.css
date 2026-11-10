@@ -797,6 +797,181 @@ h2.section-title {
 }
 
 /* =========================================================
+   ODS (Sobre e faixa da home) e área de apoio (Contato)
+   ========================================================= */
+.ods-section {
+  background: var(--bg);
+}
+
+/* Dados reais com fonte */
+.ods-dados {
+  margin: 0 0 2.4rem;
+  padding: 1.8rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.ods-dados h3 {
+  margin: 0 0 1.2rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+}
+
+.ods-dados-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.ods-dados-lista p {
+  margin: 0 0 0.6rem;
+}
+
+.ods-dado-valor {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--primary);
+}
+
+.ods-fonte {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.ods-fonte a {
+  color: var(--primary);
+}
+
+/* Cartões dos ODS */
+.ods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.ods-numero {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.category-card .ods-numero {
+  font-size: 1.3rem;
+}
+
+.ods-numero span {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+/* Cores oficiais dos ODS, com texto em contraste AA */
+.ods-numero.ods-6 { background: #26bde2; color: #062a33; }
+.ods-numero.ods-7 { background: #fcc30b; color: #2a2200; }
+.ods-numero.ods-11 { background: #fd9d24; color: #2a1800; }
+.ods-numero.ods-12 { background: #bf8b2e; color: #1f1608; }
+.ods-numero.ods-13 { background: #3f7e44; color: #ffffff; }
+
+.ods-card strong {
+  color: var(--text);
+}
+
+.ods-mais {
+  margin: 2rem 0 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.ods-mais a {
+  color: var(--primary);
+}
+
+/* Faixa de ODS na home */
+.ods-faixa {
+  margin: 2.2rem auto 0;
+  max-width: 60rem;
+  padding: 1rem 1.4rem;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.ods-faixa-rotulo {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--ink-on-mint);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.ods-faixa a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Área de apoio (Contato) */
+.apoio-section {
+  background: var(--bg);
+}
+
+.apoio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+@media (max-width: 960px) {
+  .ods-grid,
+  .ods-dados-lista {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .ods-grid,
+  .ods-dados-lista,
+  .apoio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.alto-contraste .ods-dados,
+.alto-contraste .ods-faixa {
+  background: #000000;
+  border-color: #ffffff;
+}
+
+.alto-contraste .ods-dado-valor,
+.alto-contraste .ods-fonte,
+.alto-contraste .ods-fonte a,
+.alto-contraste .ods-faixa a,
+.alto-contraste .ods-mais a {
+  color: #ffff00;
+}
+
+
+/* Iniciais da equipe: a regra .category-card p deixava o texto cinza sobre o verde */
+.team-card .team-initials {
+  color: var(--white);
+}
+
+/* =========================================================
    Página Projetos
    ========================================================= */
 .hero-projetos {
