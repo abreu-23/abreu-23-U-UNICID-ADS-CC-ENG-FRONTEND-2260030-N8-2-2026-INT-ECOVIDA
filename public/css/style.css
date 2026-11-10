@@ -2005,3 +2005,88 @@ body:has(.ecobot) .site-footer {
   font-size: 0.85rem;
   color: var(--text-soft);
 }
+/* =========================================================
+   Validação do formulário com JavaScript (js/formulario.js)
+   ========================================================= */
+/* Com o JS ativo, a mensagem própria substitui o aviso genérico do CSS */
+.js-validacao .form-field :is(input, select, textarea) + .form-hint::before {
+  content: none;
+}
+
+.form-field .campo-erro,
+.form-check .campo-erro {
+  border-color: #b3261e;
+  background: #fff6f5;
+}
+
+.form-erro {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #b3261e; /* 6,5:1 sobre o branco */
+}
+
+.form-erro:empty {
+  display: none;
+}
+
+.form-check.form-check {
+  flex-wrap: wrap;
+}
+
+.form-check label {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.form-check .form-erro {
+  flex-basis: 100%;
+  margin-top: 0;
+}
+
+.form-aviso {
+  margin: 0 0 1.2rem;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  color: #7a1712;
+  background: #fff6f5;
+  border-left: 4px solid #b3261e;
+  border-radius: var(--radius-sm);
+}
+
+.form-rascunho {
+  margin: 0 0 1.2rem;
+  padding: 0.8rem 1rem;
+  background: #eef7f1;
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-sm);
+}
+
+.form-rascunho-limpar {
+  margin-left: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: transparent;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.form-rascunho-limpar:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.alto-contraste .form-erro,
+.alto-contraste .form-aviso {
+  color: #ffff00;
+  background: #000000;
+}
+
+.alto-contraste .form-rascunho {
+  color: #ffffff;
+  background: #000000;
+}
