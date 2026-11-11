@@ -20,7 +20,7 @@
     },
     email: function (valor) {
       if (!valor) return "Informe seu e-mail.";
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor)) return "Digite um e-mail válido, como nome@email.com.";
+      if (!/^[^\s@.]+(\.[^\s@.]+)*@([A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/.test(valor)) return "Digite um e-mail válido, como nome@email.com.";
       return "";
     },
     telefone: function (valor) {
