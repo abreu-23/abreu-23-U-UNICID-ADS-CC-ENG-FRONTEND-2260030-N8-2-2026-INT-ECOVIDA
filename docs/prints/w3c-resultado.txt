@@ -1,5 +1,5 @@
 Validação W3C — Nu Html Checker 26.11.4 (70ae341) (mesmo motor do validator.w3.org)
-Data: 08/11/2026 · Código: branch main (versão publicada em https://ecovida2026.up.railway.app/)
+Data: 10/11/2026 · Código: branch main (versão publicada em https://ecovida2026.up.railway.app/)
 
 Arquivo                       Erros   Avisos
 acessibilidade.html               0        0
@@ -8,14 +8,10 @@ galeria.html                      0        0
 impacto.html                      0        0
 index.html                        0        0
 midia.html                        0        0
-noticias.html                     0        1
+noticias.html                     0        0
 obrigado.html                     0        0
 orcamento_hospedagem.html         0        0
 privacidade.html                  0        0
 projetos.html                     0        0
 sobre.html                        0        0
 css/style.css                     0        0
-
-Aviso encontrado:
-Warning: Section lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all sections, or else use a “div” element instead for any cases where no heading is needed.
-From line 83, column 5; to line 83, column 53 in resource file:/home/claude/repo/ecovida/public/noticias.html

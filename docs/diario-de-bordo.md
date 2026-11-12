@@ -56,6 +56,21 @@ Revisão manual das páginas, com validação de contraste e conferência do HTM
 ### 08/11/2026 — Preparação da 2ª entrega
 - `docs/melhorias-mvp.md` com 10 pontos de antes e depois e 9 prints (PR #22).
 - Tarefas distribuídas: validação do formulário com JavaScript (Ruan), textos da home (Pedro Pereira) e evidências de testes (Pedro Alves).
+- Ruan subiu a validação do formulário em 3 commits na branch `feat/validacao-formulario` (PR #25).
+- Pequenos detalhes corrigidos: ícones sociais sem destino retirados do rodapé e aviso do W3C zerado em `noticias.html` (PR #23).
+- Área "Como apoiar" (doações e apoio) na página de Contato e seção dos ODS 6, 7, 11, 12 e 13 na página Sobre, com dados reais e fonte: FSP-USP e Abrema (PR #24).
+- Slides da apresentação (14) e roteiro de falas, demonstração e perguntas prováveis da banca.
+
+### 09/11/2026 — Merges e revisão cruzada
+- Pedro Pereira atualizou os textos da home para a entrega final (`8cb53eb`, `1a577ba`) e fez o merge dos PRs #22, #23, #24 e #25, revisando o trabalho dos colegas.
+- O Railway publicou a versão com validação em JavaScript, área de apoio e ODS.
+
+### 10/11/2026 — Evidências e novos testes no site publicado
+- Pedro Alves subiu as evidências de testes (PR #27). O upload criou a pasta `evidencias-testes-pedro (1)/` na raiz por engano; os arquivos foram movidos para `docs/` neste PR.
+- Lighthouse repetido no site publicado: Início 92/100/100/100 e Contato 90/100/100/100 (desempenho, acessibilidade, boas práticas e SEO). A acessibilidade do Contato subiu de 96 para 100 com a correção de contraste do PR #24, e a meta de 90 do escopo foi batida em todas as categorias.
+- Teste com 18 e-mails no formulário: 5 tipos de e-mail inválido passavam, como `ruan@email..com`. A expressão regular foi corrigida no PR #28.
+- localStorage conferido no site publicado: o rascunho do formulário volta depois de recarregar, "Apagar rascunho" limpa tudo e o alto contraste continua ativo ao trocar de página.
+- O gráfico de contribuidores do GitHub mostra os 4 integrantes. O Claude aparece como coautor nos commits feitos com o Claude Code, o que confirma o uso de IA declarado neste diário.
 
 ---
 
@@ -129,6 +144,7 @@ Depois da Sobre e da Projetos, a parte comum dos prompts virou um **modelo** com
 
 ## Próximos passos
 - Legenda sincronizada (`.vtt`) para o vídeo da página de Mídia.
+- Reservar no CSS a altura da barra de acessibilidade, para reduzir a troca de layout (CLS).
 - Contador de impacto em tempo real e EcoBot com IA.
 
 ---
