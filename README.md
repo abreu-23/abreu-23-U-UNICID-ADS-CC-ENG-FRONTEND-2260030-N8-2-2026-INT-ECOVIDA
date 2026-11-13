@@ -54,7 +54,7 @@ O **Portal EcoVida Urbana** une **educação ambiental, mudança de comportament
 
 - Apresentar conteúdo educativo sobre reciclagem, consumo consciente e economia de água e energia.
 - Disponibilizar um mapa e uma lista de pontos de coleta de materiais recicláveis.
-- Exibir indicadores (ilustrativos) de materiais coletados, para reforçar o senso de impacto coletivo.
+- Exibir indicadores (ilustrativos) de materiais coletados, para reforçar o senso de impacto coletivo. Na página inicial, o contador sobe sozinho em simulação, com aviso na tela.
 - Garantir acessibilidade digital para pessoas com deficiência em todas as páginas.
 - Divulgar projetos, notícias e dados de impacto socioambiental.
 - Tirar dúvidas rápidas com o assistente **EcoBot**.
@@ -270,7 +270,7 @@ ecovida-urbana/
 ├── public/             # o site, servido pelo Express
 │   ├── *.html          # as 12 páginas
 │   ├── css/style.css   # folha de estilo única
-│   ├── js/             # ecobot.js, acessibilidade.js e menu.js
+│   ├── js/             # ecobot.js, acessibilidade.js, menu.js, formulario.js e contador.js
 │   ├── img/            # fotos do Pixabay em WebP
 │   ├── assets/         # vídeo (.mp4) e áudio do podcast (.m4a)
 │   └── favicon.svg
