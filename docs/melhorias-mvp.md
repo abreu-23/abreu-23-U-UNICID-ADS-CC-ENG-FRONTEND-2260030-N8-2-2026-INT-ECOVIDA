@@ -56,9 +56,9 @@ O alto contraste usa preto, branco e amarelo (acima de 13:1) e continua ligado a
 
 Ao enviar vazio, aparece "Há 5 campos para corrigir antes de enviar", o foco vai para o primeiro erro e cada campo mostra o que falta.
 
-## O que ainda falta
+## Próximos passos
 
-- Legenda sincronizada (`.vtt`) para o vídeo da página de Mídia.
-- Contador de impacto em tempo real e EcoBot com IA, como evolução.
+- Aplicativo móvel do EcoVida Urbana, para consultar pontos de coleta e dicas direto no celular.
+- Melhoria no site: o EcoBot passar a responder com IA, com a chave guardada só no servidor.
 
 > Observação: nos prints do MVP, as fotos aparecem pelas cópias locais em WebP, porque o CDN do Pixabay usado na época não abre no ambiente em que os prints foram gerados. As fotos são as mesmas.

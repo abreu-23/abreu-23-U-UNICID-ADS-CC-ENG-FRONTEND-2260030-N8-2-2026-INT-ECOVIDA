@@ -143,9 +143,8 @@ Depois da Sobre e da Projetos, a parte comum dos prompts virou um **modelo** com
 - **Uma branch por tarefa deixa tudo rastreável.** Cada mudança tem um PR que explica o que mudou e por quê.
 
 ## Próximos passos
-- Legenda sincronizada (`.vtt`) para o vídeo da página de Mídia.
-- Reservar no CSS a altura da barra de acessibilidade, para reduzir a troca de layout (CLS).
-- Contador de impacto em tempo real e EcoBot com IA.
+- Aplicativo móvel do EcoVida Urbana, para consultar pontos de coleta e dicas direto no celular.
+- Melhoria no site: o EcoBot passar a responder com IA, com a chave guardada só no servidor.
 
 ---
 
