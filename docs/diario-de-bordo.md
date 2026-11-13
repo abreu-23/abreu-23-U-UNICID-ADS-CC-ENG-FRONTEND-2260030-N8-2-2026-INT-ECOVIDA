@@ -72,6 +72,11 @@ Revisão manual das páginas, com validação de contraste e conferência do HTM
 - localStorage conferido no site publicado: o rascunho do formulário volta depois de recarregar, "Apagar rascunho" limpa tudo e o alto contraste continua ativo ao trocar de página.
 - O gráfico de contribuidores do GitHub mostra os 4 integrantes. O Claude aparece como coautor nos commits feitos com o Claude Code, o que confirma o uso de IA declarado neste diário.
 
+### 12/11/2026 — Contador simulado na página inicial
+- O contador de materiais reciclados era um número fixo no HTML. Para ter dados reais, seria preciso um servidor com banco de dados e um formulário de registro de entregas, o que ficou arriscado para a semana da apresentação.
+- Decisão: simular o contador com JavaScript (`public/js/contador.js`). A cada 4 segundos ele soma de 1 a 3 kg ao total e pausa quando a aba não está visível.
+- Para não enganar o visitante, o número tem o aviso "Simulação: número fictício que sobe sozinho", e a nota abaixo dos indicadores explica que não são dados reais. A bolinha do aviso não pisca para quem ativou a redução de movimento.
+
 ---
 
 ## Uso de IA
