@@ -399,27 +399,27 @@ Tudo fica na pasta [`docs/`](docs/):
 - EcoBot por FAQ, sem IA paga; a integração com IA fica como evolução opcional.
 
 ### 🔮 Próximas etapas
-- Legenda sincronizada (.vtt) para o vídeo da página de Mídia.
-- EcoBot com IA e contador de impacto em tempo real.
+- Aplicativo móvel do EcoVida Urbana, para consultar pontos de coleta e dicas direto no celular.
+- Melhoria no site: o EcoBot passar a responder com IA, com a chave guardada só no servidor.
 
 ---
 
 ## 🏁 Critérios de aceitação
 
-O site está **pronto** quando todos os itens abaixo forem atendidos e registrados nas evidências de testes.
+O site está **pronto** quando todos os itens abaixo forem atendidos e registrados nas evidências de testes. Situação conferida em 12/11/2026 ([`docs/evidencias-testes.md`](docs/evidencias-testes.md)).
 
-- [ ] **Páginas e navegação:** todas as páginas abrem sem erro e se ligam pelo menu e pelo rodapé.
-- [ ] **Estrutura e semântica:** `header`, `nav`, `main` e `footer`, um único `h1` e títulos em ordem.
-- [ ] **Formulários validados:** contato e newsletter com `label`, `required` e `type="email"`, testados com envio vazio, e-mail inválido e preenchimento correto, e recebidos no e-mail da equipe.
-- [ ] **Multimídia:** imagens com `alt` e legenda; vídeo, áudio e iframe com controles e alternativa em texto.
-- [ ] **Tabelas:** impacto e orçamento com cabeçalho e dados corretos.
-- [ ] **EcoBot e barra:** funcionam com teclado e leitor de tela; o site continua completo sem JavaScript.
-- [ ] **Acessibilidade:** contraste ≥ 4,5:1, navegação completa por teclado e Lighthouse ≥ 90.
-- [ ] **Validação W3C:** todas as páginas HTML e o CSS sem erros.
-- [ ] **Responsividade:** sem rolagem horizontal em 360, 768 e 1280 px, com prints e teste em celular real.
-- [ ] **Desempenho e SEO:** imagens otimizadas, `title` e `meta description` próprios e Lighthouse ≥ 90.
-- [ ] **Documentação:** `/docs` com plano de contexto, diário de bordo, orçamento (3 hospedagens + 3 domínios) e evidências de testes.
-- [ ] **Pacote de entrega:** `.zip`, `.txt` com os integrantes, escopo em `.doc`/`.pdf` e print `.png`, conferidos por dois integrantes.
+- [x] **Páginas e navegação:** todas as páginas abrem sem erro e se ligam pelo menu e pelo rodapé.
+- [x] **Estrutura e semântica:** `header`, `nav`, `main` e `footer`, um único `h1` e títulos em ordem.
+- [ ] **Formulários validados:** contato e newsletter com `label`, `required` e `type="email"`, testados com envio vazio, e-mail inválido e preenchimento correto, e recebidos no e-mail da equipe. *(Falta conferir na caixa de entrada um envio de teste.)*
+- [x] **Multimídia:** imagens com `alt` e legenda; vídeo, áudio e iframe com controles e alternativa em texto.
+- [x] **Tabelas:** impacto e orçamento com cabeçalho e dados corretos.
+- [ ] **EcoBot e barra:** funcionam com teclado e leitor de tela; o site continua completo sem JavaScript. *(Teclado e site sem JavaScript conferidos; falta o teste com leitor de tela.)*
+- [x] **Acessibilidade:** contraste ≥ 4,5:1, navegação completa por teclado e Lighthouse ≥ 90.
+- [x] **Validação W3C:** todas as páginas HTML e o CSS sem erros.
+- [ ] **Responsividade:** sem rolagem horizontal em 360, 768 e 1280 px, com prints e teste em celular real. *(Falta registrar o modelo do celular real nas evidências.)*
+- [x] **Desempenho e SEO:** imagens otimizadas, `title` e `meta description` próprios e Lighthouse ≥ 90.
+- [x] **Documentação:** `/docs` com plano de contexto, diário de bordo, orçamento (3 hospedagens + 3 domínios) e evidências de testes.
+- [ ] **Pacote de entrega:** `.zip`, `.txt` com os integrantes, escopo em `.doc`/`.pdf` e print `.png`, conferidos por dois integrantes. *(Falta a conferência dos dois integrantes antes do envio.)*
 
 > **Regra de "pronto":** uma tarefa só é mergeada depois de validada no W3C, revisada por outro integrante no PR e testada com o teclado e em tela pequena. O projeto só é enviado quando todas as páginas estiverem nesse estado e a documentação estiver completa.
 
