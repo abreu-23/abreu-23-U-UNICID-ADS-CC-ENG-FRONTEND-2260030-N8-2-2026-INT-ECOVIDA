@@ -165,6 +165,7 @@ Prints: [`prints/home-desktop.png`](prints/home-desktop.png), [`prints/home-celu
 | Vídeo e áudio sem autoplay e com controles | ✅ *(automático)* | 0 `autoplay`, 0 mídias sem `controls`; o `iframe` do mapa tem `title` |
 | Um único `h1` e `lang="pt-BR"` | ✅ *(automático)* | Nas 12 páginas |
 | Contraste das seções novas (ODS e "Como apoiar") | ✅ *(automático)* | axe-core: 0 violações WCAG A/AA em index, sobre e contato |
+| Site com JavaScript desligado | ✅ *(automático, 12/11)* | Em 390 e 1280 px: os 9 links do menu visíveis, conteúdo e formulário completos, sem rolagem lateral (index, contato, sobre e mídia) |
 | Leitor de tela (NVDA ou do navegador) | ☐ *(manual)* | |
 
 ## 7. Links *(automático)*

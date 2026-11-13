@@ -57,7 +57,7 @@ hábitos.
 - **EcoBot com IA (opcional):** trocar `responder()` de `lib/faq.js` por uma chamada a
   uma API de IA, com a chave só no `.env` e nas Variables do Railway.
 - **Barra de acessibilidade:** leitura da página por voz e modo alto contraste.
-- Legenda sincronizada (.vtt) para o vídeo da página de mídia.
+- Aplicativo móvel do EcoVida Urbana, para consultar pontos de coleta e dicas direto no celular.
 
 ## 7. Stack técnica
 
