@@ -499,6 +499,46 @@ h2.section-title {
   font-size: 0.85rem;
 }
 
+/* Aviso do contador simulado (criado pelo js/contador.js) */
+.contador-aviso {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.6rem 0 0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--primary-dark);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Bolinha que pisca, indicando que o número muda */
+.contador-aviso::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--lime);
+  animation: contador-pulso 1.6s ease-in-out infinite;
+}
+
+@keyframes contador-pulso {
+  50% { opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contador-aviso::before {
+    animation: none;
+  }
+}
+
+.alto-contraste .contador-aviso {
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
 /* =========================================================
    Newsletter
    ========================================================= */
