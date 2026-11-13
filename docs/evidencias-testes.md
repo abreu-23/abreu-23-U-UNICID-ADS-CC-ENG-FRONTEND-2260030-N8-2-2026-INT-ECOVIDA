@@ -137,6 +137,17 @@ Chave: `ecovida-rascunho-contato`.
 | Clicar em "Apagar rascunho" | ✅ Apagou do localStorage, limpou os campos, tirou o aviso e pôs o foco em "Nome" |
 | Recarregar de novo | ✅ Formulário vazio, sem rascunho fantasma |
 
+### 4.4 Contador simulado da página inicial (12/11) *(automático)*
+
+| Teste | Resultado |
+|---|---|
+| Abrir a página inicial e esperar cerca de 8 segundos | ✅ O número subiu de 128.430 para 128.435 kg |
+| Aviso de simulação | ✅ Aparece abaixo do rótulo: "Simulação: número fictício que sobe sozinho" |
+| Contraste do aviso (branco sobre #1F4D39) | ✅ 9,6:1 |
+| Console do navegador | ✅ Sem erros |
+| W3C (Nu Html Checker) no `index.html` e no `style.css` | ✅ 0 erros e 0 avisos |
+| Sem JavaScript | ✅ O número fica parado em 128.430 e a nota já avisa que é ilustrativo |
+
 ## 5. Responsividade *(automático)*
 
 Rolagem horizontal medida em cada página (`scrollWidth − clientWidth`; 0 = sem rolagem):
