@@ -1892,6 +1892,51 @@ body:has(.ecobot) .site-footer {
   outline-offset: 2px;
 }
 
+.barra-acessibilidade-botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.barra-acessibilidade-botao:disabled:hover {
+  background: transparent;
+}
+
+/* Botões A− e A+ com o percentual atual entre eles */
+.barra-acessibilidade-grupo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.barra-acessibilidade-grupo .barra-acessibilidade-botao {
+  min-width: 2.75rem;
+  padding: 0.35rem 0.7rem;
+}
+
+.barra-acessibilidade-status {
+  min-width: 5.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Texto ampliado (classe .texto-ampliado no <html>): os breakpoints em px
+   não percebem a letra maior, então o cabeçalho passa a usar o layout em
+   duas linhas mesmo no computador, com o menu inteiro embaixo da marca. */
+.texto-ampliado .header-inner {
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.texto-ampliado .main-nav {
+  order: 3;
+  flex: 0 0 100%;
+  border-top: 1px solid var(--border);
+  padding-top: 0.6rem;
+  margin-top: 0.4rem;
+}
+
 /* =========================================================
    Modo alto contraste (classe .alto-contraste no <html>)
    Exceção à regra "sem !important": o modo precisa vencer

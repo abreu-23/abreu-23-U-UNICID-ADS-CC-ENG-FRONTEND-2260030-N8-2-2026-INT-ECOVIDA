@@ -1,29 +1,45 @@
-// Barra de acessibilidade: leitura da página por voz e modo alto contraste.
+// Barra de acessibilidade: leitura da página por voz, tamanho do texto e modo alto contraste.
 // A barra só existe quando o JavaScript carrega; sem JS, o site funciona igual.
 
 (function () {
   const CHAVE_CONTRASTE = "ecovida-alto-contraste";
+  const CHAVE_TEXTO = "ecovida-tamanho-texto";
+  // Percentuais sobre o tamanho escolhido no navegador (o CSS usa rem, então tudo acompanha)
+  const NIVEIS_TEXTO = [90, 100, 115, 130, 150];
+  const NIVEL_PADRAO = 100;
   const raiz = document.documentElement;
 
   // localStorage pode estar bloqueado (aba anônima, cookies desligados)
-  function lerPreferencia() {
+  function lerPreferencia(chave) {
     try {
-      return localStorage.getItem(CHAVE_CONTRASTE) === "sim";
+      return localStorage.getItem(chave);
     } catch (erro) {
-      return false;
+      return null;
     }
   }
 
-  function salvarPreferencia(ativo) {
+  function salvarPreferencia(chave, valor) {
     try {
-      localStorage.setItem(CHAVE_CONTRASTE, ativo ? "sim" : "nao");
+      localStorage.setItem(chave, valor);
     } catch (erro) {
-      // Sem armazenamento: o contraste vale só nesta página
+      // Sem armazenamento: a escolha vale só nesta página
     }
   }
 
-  // Aplica o contraste salvo o quanto antes, para evitar "piscar" a página clara
-  raiz.classList.toggle("alto-contraste", lerPreferencia());
+  function nivelSalvo() {
+    const nivel = Number(lerPreferencia(CHAVE_TEXTO));
+    return NIVEIS_TEXTO.indexOf(nivel) !== -1 ? nivel : NIVEL_PADRAO;
+  }
+
+  function aplicarTamanhoTexto(nivel) {
+    raiz.style.fontSize = nivel === NIVEL_PADRAO ? "" : nivel + "%";
+    // Com texto maior, o CSS reorganiza o cabeçalho para o menu não se espremer
+    raiz.classList.toggle("texto-ampliado", nivel > NIVEL_PADRAO);
+  }
+
+  // Aplica as escolhas salvas o quanto antes, para evitar "piscar" a página
+  raiz.classList.toggle("alto-contraste", lerPreferencia(CHAVE_CONTRASTE) === "sim");
+  aplicarTamanhoTexto(nivelSalvo());
 
   function criarBotao(texto) {
     const botao = document.createElement("button");
@@ -112,6 +128,57 @@
       conteudo.append(botaoOuvir);
     }
 
+    // ----- Tamanho do texto -----
+    let nivelAtual = nivelSalvo();
+
+    // Texto visível curto ("A+") + complemento lido pelos leitores de tela
+    function criarBotaoTexto(visivel, oculto) {
+      const botao = criarBotao(visivel);
+      const complemento = document.createElement("span");
+      complemento.className = "visually-hidden";
+      complemento.textContent = " " + oculto;
+      botao.append(complemento);
+      return botao;
+    }
+
+    const grupoTexto = document.createElement("div");
+    grupoTexto.className = "barra-acessibilidade-grupo";
+    grupoTexto.setAttribute("role", "group");
+    grupoTexto.setAttribute("aria-label", "Tamanho do texto");
+
+    const botaoDiminuir = criarBotaoTexto("A−", "diminuir texto");
+    const botaoAumentar = criarBotaoTexto("A+", "aumentar texto");
+    const status = document.createElement("span");
+    status.className = "barra-acessibilidade-status";
+    status.setAttribute("role", "status");
+
+    function atualizarTexto() {
+      aplicarTamanhoTexto(nivelAtual);
+      status.textContent = "Texto " + nivelAtual + "%";
+      const posicao = NIVEIS_TEXTO.indexOf(nivelAtual);
+      botaoDiminuir.disabled = posicao === 0;
+      botaoAumentar.disabled = posicao === NIVEIS_TEXTO.length - 1;
+    }
+
+    function mudarTexto(passo) {
+      const posicao = NIVEIS_TEXTO.indexOf(nivelAtual) + passo;
+      if (posicao < 0 || posicao >= NIVEIS_TEXTO.length) return;
+      nivelAtual = NIVEIS_TEXTO[posicao];
+      salvarPreferencia(CHAVE_TEXTO, String(nivelAtual));
+      atualizarTexto();
+    }
+
+    botaoDiminuir.addEventListener("click", function () {
+      mudarTexto(-1);
+    });
+    botaoAumentar.addEventListener("click", function () {
+      mudarTexto(1);
+    });
+
+    grupoTexto.append(botaoDiminuir, status, botaoAumentar);
+    conteudo.append(grupoTexto);
+    atualizarTexto();
+
     // ----- Alto contraste -----
     const botaoContraste = criarBotao("Alto contraste");
     botaoContraste.setAttribute("aria-pressed", String(raiz.classList.contains("alto-contraste")));
@@ -119,7 +186,7 @@
       const ativo = !raiz.classList.contains("alto-contraste");
       raiz.classList.toggle("alto-contraste", ativo);
       botaoContraste.setAttribute("aria-pressed", String(ativo));
-      salvarPreferencia(ativo);
+      salvarPreferencia(CHAVE_CONTRASTE, ativo ? "sim" : "nao");
     });
     conteudo.append(botaoContraste);
 
