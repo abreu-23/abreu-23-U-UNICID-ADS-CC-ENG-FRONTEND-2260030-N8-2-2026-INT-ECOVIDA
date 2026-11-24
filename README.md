@@ -11,7 +11,7 @@
 | **Curso** | Curso Superior de Informática |
 | **Disciplina** | Front-End — Prof. Paulo Fratta |
 | **Equipe** | Luccas Abreu, Pedro Henrique Pereira da Silva, Pedro Henrique da Silva Alves, Ruan Ferreira Silva |
-| **Entrega** | 09/11/2026, com o site no ar |
+| **Entrega** | 09/11/2026, com o site no ar (melhorias contínuas até 17/11/2026) |
 
 ---
 
@@ -21,7 +21,7 @@
 2. [Objetivos](#-objetivos)
 3. [Público-alvo](#-público-alvo)
 4. [Páginas do site](#-páginas-do-site)
-5. [EcoBot e barra de acessibilidade](#-ecobot-e-barra-de-acessibilidade)
+5. [Recursos em JavaScript](#-recursos-em-javascript)
 6. [Mapa do site e navegação](#-mapa-do-site-e-navegação)
 7. [Requisitos não funcionais](#-requisitos-não-funcionais)
 8. [Identidade visual](#-identidade-visual)
@@ -95,30 +95,38 @@ São **10 páginas HTML5** do escopo, mais 2 páginas de apoio, ligadas por um c
 | **Categorias** | Lar Sustentável (→ `noticias.html#lar-sustentavel`), Transporte Urbano (→ `projetos.html#mobilidade-ativa`) e Reduza e Recicle (→ `#pontos-coleta`). | Conteúdo educativo |
 | **Destaque da semana** | "Hortas Urbanas: Como cultivar em pequenos espaços", com botão "Ler Artigo Completo" (→ `noticias.html#hortas-urbanas`). | Divulgar notícias socioambientais |
 | **Pontos de coleta** | Lista de pontos em São Paulo com endereço e materiais aceitos. | Indicar onde reciclar |
-| **Estatísticas** | +5.000 pessoas engajadas · +200 dicas publicadas · 128.430 kg reciclados (valores fixos e ilustrativos). | Reforçar o impacto coletivo |
+| **Estatísticas** | +5.000 pessoas engajadas · +200 dicas publicadas · 128.430 kg reciclados. Os valores são ilustrativos; o contador de kg sobe sozinho em **simulação** (`contador.js`), com o aviso "Simulação" na tela. Sem JavaScript, o número fica parado. | Reforçar o impacto coletivo |
 | **Newsletter** | Campo `type="email"` com `required` e `label`, enviado ao e-mail da equipe. | Manter o visitante engajado |
 | **Chamada final** | Botão "Ver página de impacto" (→ `impacto.html`). | Divulgar os dados de impacto |
 
 ### Formulários
 
-A validação usa **somente HTML5**: se algum campo estiver inválido, o navegador bloqueia o envio e mostra o erro no próprio campo. O envio é real: o serviço gratuito **FormSubmit** recebe os dados e os encaminha ao e-mail da equipe (uso aceito pelo professor). O endereço de e-mail não aparece no código; o formulário usa o código secreto gerado na ativação do FormSubmit. Após o envio, a pessoa volta para `obrigado.html`.
+A validação tem duas camadas. No formulário de contato, o **JavaScript** (`public/js/formulario.js`) bloqueia o envio com erro (`preventDefault`), mostra a mensagem embaixo de cada campo, marca o campo com borda vermelha e `aria-invalid` e salva um **rascunho no `localStorage`**, para nada se perder ao recarregar a página. Sem JavaScript, a **validação HTML5** (`required`, `type`, `pattern`, `min`/`max`) continua valendo e o navegador mostra o erro no próprio campo. O envio é real: o serviço gratuito **FormSubmit** recebe os dados e os encaminha ao e-mail da equipe (uso aceito pelo professor). O endereço de e-mail não aparece no código; o formulário usa o código secreto gerado na ativação do FormSubmit. Após o envio, a pessoa volta para `obrigado.html`.
 
 | Campo | Tipo | Validação | Finalidade |
 |---|---|---|---|
-| Nome completo | `text` | `required` | Identificar o contato |
-| E-mail | `email` | `required` + formato verificado | Permitir o retorno da equipe |
+| Nome completo | `text` | `required` + nome e sobrenome (JS) | Identificar o contato |
+| E-mail | `email` | `required` + formato verificado (o JS bloqueia pontos seguidos, ponto nas pontas e extensão curta) | Permitir o retorno da equipe |
 | Telefone | `tel` | `pattern` `(11) 90000-0000` (opcional) | Contato alternativo |
-| Data da ação de interesse | `date` | data válida (opcional) | Indicar quando quer participar |
-| Nº de participantes | `number` | `min` e `max` (opcional) | Tamanho do grupo |
+| Data da ação de interesse | `date` | a partir de 01/01/2026 (opcional) | Indicar quando quer participar |
+| Nº de participantes | `number` | inteiro de 1 a 50 (opcional) | Tamanho do grupo |
 | Assunto | `select` | `required` | Dúvida, parceria, participar de ação ou relatar barreira |
-| Mensagem | `textarea` | `required` + `minlength` | Detalhar o pedido |
+| Mensagem | `textarea` | `required` + `minlength` (mínimo de 20 caracteres, avisa quantos faltam) | Detalhar o pedido |
 | Aceite de privacidade | `checkbox` | `required` | Registrar o consentimento (LGPD) |
 
 ---
 
-## 🤖 EcoBot e barra de acessibilidade
+## 🤖 Recursos em JavaScript
 
-Os dois recursos usam JavaScript, mas o site **funciona igual sem ele**: os botões só aparecem quando o script carrega.
+O JavaScript é só uma melhoria: o site **funciona igual sem ele**, e os botões só aparecem quando o script carrega. São cinco scripts pequenos, sem bibliotecas, carregados com `defer`:
+
+| Script | Páginas | O que faz |
+|---|---|---|
+| `menu.js` | Todas | Menu recolhível no celular (até 960 px), com `aria-expanded` e `Esc` para fechar |
+| `acessibilidade.js` | Todas | Barra de acessibilidade (ouvir a página, A−/A+ e alto contraste) |
+| `ecobot.js` | Todas | Assistente de dúvidas EcoBot |
+| `formulario.js` | Contato | Validação com mensagens por campo e rascunho salvo no `localStorage` |
+| `contador.js` | Início | Contador simulado de materiais reciclados, com aviso de simulação |
 
 **EcoBot** — assistente de dúvidas presente em todas as páginas (botão "Dúvidas? EcoBot", no canto inferior direito).
 - O widget (`public/js/ecobot.js`) envia a pergunta para a rota `POST /api/assistente` do servidor.
@@ -129,7 +137,9 @@ Os dois recursos usam JavaScript, mas o site **funciona igual sem ele**: os bot�
 
 **Barra de acessibilidade** — faixa no topo de todas as páginas (`public/js/acessibilidade.js`).
 - **Ouvir a página:** lê o conteúdo principal em voz alta (API `speechSynthesis`, em português). O botão vira "Parar leitura". Só aparece se o navegador tiver suporte a voz.
-- **Alto contraste:** preto, branco e amarelo (contraste acima de 13:1). A escolha fica salva entre as páginas.
+- **A− / A+:** diminui ou aumenta o texto em 5 níveis, de 90% a 150%. Como o CSS usa `rem`, todo o layout acompanha; com o texto ampliado, o cabeçalho passa para duas linhas para o menu não se espremer.
+- **Alto contraste:** preto, branco e amarelo (contraste acima de 13:1).
+- O tamanho do texto e o contraste ficam salvos no `localStorage` entre as páginas. Se o armazenamento estiver bloqueado (aba anônima), a escolha vale só na página atual.
 
 ---
 
@@ -182,13 +192,13 @@ A Lei Brasileira de Inclusão (Lei nº 13.146/2015, art. 63) serve de referênci
 - **ARIA:** `lang="pt-BR"`, `aria-label` no `nav` e `aria-labelledby` nas seções. ARIA só entra quando o HTML nativo não resolve.
 - **Formulários:** `label for`, "(obrigatório)" escrito no rótulo, `autocomplete` em nome, e-mail e telefone.
 - **Multimídia:** sem autoplay, com `controls` e versão em texto (resumo na mesma ordem); legenda (`track`) no vídeo assim que estiver sincronizada; `iframe` com `title`.
-- **Leitura:** fontes em `rem` (zoom até 200%), corpo de 16 px, linhas de ~60 caracteres, respeito a `prefers-reduced-motion` e leitura por voz opcional.
+- **Leitura:** fontes em `rem` (zoom até 200%), botões A−/A+ (90% a 150%), corpo de 16 px, linhas de ~60 caracteres, respeito a `prefers-reduced-motion` (inclusive no contador simulado) e leitura por voz opcional.
 
 ### 🌱 Sustentabilidade digital
 O próprio site segue o que ensina.
 
 - `loading="lazy"` abaixo da dobra e ícones em SVG embutido.
-- CSS único, sem frameworks; JavaScript pequeno e só onde agrega (EcoBot e barra de acessibilidade), carregado com `defer`.
+- CSS único, sem frameworks; JavaScript pequeno e só onde agrega (menu, barra de acessibilidade, EcoBot, formulário e contador), carregado com `defer`.
 - Conteúdo aberto, sem cadastro obrigatório, que funciona em celulares simples e conexões lentas.
 - Comparativo de hospedagem verde (energia renovável, compensação de carbono, localização do data center), com apoio do Green Web Check.
 - Fotos do Pixabay salvas em `public/img/` em WebP, até 200 KB cada (800 px no conteúdo, 1280 px nos fundos), geradas pelo script `npm run imagens`. O peso total das fotos caiu de 6,4 MB para 2,1 MB.
@@ -204,7 +214,7 @@ O próprio site segue o que ensina.
 - `width` e `height` declarados em cada imagem, para evitar saltos de layout.
 - Um único CSS, organizado por seções, com variáveis e sem regras repetidas; HTML indentado e comentado em português.
 - Poppins e Inter via Google Fonts, com `preconnect` e `display=swap`.
-- Mapa com `loading="lazy"`; vídeo e áudio com `preload` controlado quando forem publicados.
+- Mapa com `loading="lazy"`; vídeo com `preload="metadata"` e áudio com `preload="none"`, para não baixar a mídia antes do clique.
 
 ### 🔎 SEO básico
 - `title` único por página ("Nome da página — EcoVida Urbana", até ~60 caracteres).
@@ -251,11 +261,12 @@ O próprio site segue o que ensina.
 | Ferramenta | Uso |
 |---|---|
 | **HTML5 + CSS3** | Estrutura e visual de todas as páginas, sem frameworks |
-| **JavaScript** | EcoBot e barra de acessibilidade (sem bibliotecas, com `defer`) |
+| **JavaScript** | Menu, barra de acessibilidade, EcoBot, validação do formulário e contador simulado (sem bibliotecas, com `defer`) |
 | **Node.js + Express** | Servidor que entrega o site e responde ao EcoBot (`/api/assistente`) |
 | **Railway** | Hospedagem, com deploy automático a cada merge na `main` |
 | **FormSubmit** | Envio dos formulários por e-mail, sem back-end próprio |
 | **Git + GitHub** | Versionamento com issues, uma branch por tarefa e pull requests |
+| **sharp** (dev) | Conversão das fotos para WebP (`npm run imagens`) |
 | **W3C Validator + Lighthouse** | Validação e auditoria |
 
 ## 📁 Estrutura de pastas
@@ -370,8 +381,12 @@ Tudo fica na pasta [`docs/`](docs/):
 | Orçamento alinhado ao Railway e imagens locais em WebP (issues #11 e #8) | ✅ Concluído |
 | Menu recolhível no celular (issue #9) | ✅ Concluído |
 | Vídeo e áudio reais na página de Mídia (issue #10) | ✅ Concluído |
-| Legenda sincronizada do vídeo | 🔄 Pendente |
-| **Entrega final** | **09/11/2026** |
+| Validação do formulário com JavaScript e rascunho no `localStorage` | ✅ Concluído |
+| Evidências de testes e melhorias desde o MVP em `docs/` (PRs #27 a #29) | ✅ Concluído |
+| **Entrega final** | ✅ **09/11/2026** |
+| Contador simulado na página inicial (PR #31) | ✅ Concluído (12/11) |
+| Botões A− e A+ para o tamanho do texto (PR #32) | ✅ Concluído (17/11) |
+| Legenda sincronizada do vídeo (`track` já preparado no código) | 🔄 Pendente |
 
 ---
 
